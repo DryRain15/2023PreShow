@@ -36,9 +36,14 @@ public class Game : MonoBehaviour, IStateContainer
     {
         CurrentState?.OnState();
 
-        if (CurrentState is null && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SetState(new Stage1Play());
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SetState(new Stage2Play());
         }
     }
     

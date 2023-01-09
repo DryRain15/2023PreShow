@@ -26,5 +26,21 @@ namespace Proto.Utils
 
             return _stringBuilderInner.ToString();
         }
+        
+        public static Vector2 GetDirection(this InputAxis axis)
+        {
+            Vector2 direction = Vector2.zero;
+        
+            if (axis.HasFlag(InputAxis.N))
+                direction.y += 1;
+            if (axis.HasFlag(InputAxis.S))
+                direction.y -= 1;
+            if (axis.HasFlag(InputAxis.E))
+                direction.x += 1;
+            if (axis.HasFlag(InputAxis.W))
+                direction.x -= 1;
+
+            return direction.normalized;
+        }
     }
 }

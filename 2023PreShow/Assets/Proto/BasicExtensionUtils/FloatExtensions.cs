@@ -12,7 +12,7 @@ namespace Proto.BasicExtensionUtils
                 angle -= 90f;
             }
 
-            return angle;
+            return angle - 90f;
         }
 
         /// <summary>

@@ -17,7 +17,7 @@ public class Stage1Play : IState
 	private static List<Path> PathPool => Game.Instance.Paths;
 	private float _progress = 0f;
 
-	public float Speed = 4f;
+	public float Speed = 6f;
 
 	private Vector2 _position;
 
@@ -27,6 +27,8 @@ public class Stage1Play : IState
 
 		IsStarted = true;
 		_currentPath = Game.Instance.Paths[0];
+
+		Game.Instance.Player.Position = _currentPath.startPoint + _progress * _currentPath.direction;
 	}
 
 	public void OnState()
@@ -74,11 +76,11 @@ public class Stage1Play : IState
 			_currentPath = PathPool[target];
 			_progress = _currentPath.adjacentPaths[prevIdx];
 
-			pos = _currentPath.startPoint + _progress * _currentPath.direction;
+			pos = _currentPath.startPoint + _progress * _currentPath.direction.normalized;
 		}
 		else
 		{
-			pos += moveDist * dt * Speed * _currentPath.direction;
+			pos += moveDist * dt * Speed * _currentPath.direction.normalized;
 			_progress += moveDist * dt * Speed / _currentPath.distance;
 			_progress = Mathf.Clamp01(_progress);
 		}
