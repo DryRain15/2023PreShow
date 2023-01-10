@@ -14,6 +14,10 @@ public class YieldForEvent : IState
 
 	private float _innerTimer;
 
+	public YieldForEvent(DialogueScript dialogue)
+	{
+		RegisterDialogue(dialogue);
+	}
 
 	public void RegisterDialogue(DialogueScript dialogue)
 	{

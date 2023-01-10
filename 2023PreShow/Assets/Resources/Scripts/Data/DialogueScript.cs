@@ -3,37 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+[CreateAssetMenu(fileName = "NewDialogueEvent", menuName = "Dialogue/Create Dialogue Event", order = 2)]
 public class DialogueScript : ScriptableObject
 {
-    public List<DialogueEventData> DialogueEvents = new List<DialogueEventData>();
-
-    private void OnValidate()
-    {
-	    for (int idx = 0; idx < DialogueEvents.Count; idx++)
-	    {
-		    var data = DialogueEvents[idx];
-		    switch (data.Type)
-		    {
-			    case DialogueEventType.Speech:
-				    DialogueEvents[idx] = new SpeechEventData();
-				    break;
-			    case DialogueEventType.Image:
-				    DialogueEvents[idx] = new ImageEventData();
-				    break;
-			    case DialogueEventType.Shake:
-				    DialogueEvents[idx] = new ShakeEventData();
-				    break;
-			    case DialogueEventType.Fade:
-				    DialogueEvents[idx] = new FadeEventData();
-				    break;
-			    default:
-				    break;
-		    }
-	    }
-    }
+	[SerializeField]
+    public List<DialogueEventData> DialogueEvents;
 }
 
-[Flags]
+[Serializable]
 public enum DialogueEventType{
 	None,
 	Speech,
@@ -42,52 +20,26 @@ public enum DialogueEventType{
 	Fade,
 }
 
+[Serializable]
 public class DialogueEventData
 {
+	[SerializeField]
 	protected DialogueEventType _type = DialogueEventType.None;
 	public DialogueEventType Type => _type;
-	public bool Wait;
-}
-
-public class SpeechEventData : DialogueEventData
-{
+	public bool Wait = true;
+	public float Duration;
 	
+	// SpeechEvent
 	public string Text;
 	public string Speaker;
-	public SpeechEventData()
-	{
-		_type = DialogueEventType.Speech;
-	}
-}
-
-public class ImageEventData : DialogueEventData
-{
-	public float Duration;
-	public Sprite Image;
-	public ImageEventData()
-	{
-		_type = DialogueEventType.Image;
-	}
-}
-
-public class ShakeEventData : DialogueEventData
-{
-	public float Duration;
-	public float Power;
-	public ShakeEventData()
-	{
-		_type = DialogueEventType.Shake;
-	}
-}
-
-public class FadeEventData : DialogueEventData
-{
-	public float Destination;
-	public float Duration;
-	public Color Color;
 	
-	public FadeEventData()
-	{
-		_type = DialogueEventType.Fade;
-	}
+	// ImageEvent
+	public Sprite Image;
+	
+	// ShakeEvent
+	public float Power;
+	
+	// FadeEvent
+	public float Destination;
+	public Color Color;
 }

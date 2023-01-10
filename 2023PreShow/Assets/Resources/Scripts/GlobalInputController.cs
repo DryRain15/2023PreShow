@@ -52,12 +52,16 @@ public class GlobalInputController : MonoBehaviour
     public InputAxis CurrentRawAxis;
     public Vector2 CurrentAxis;
     
+    public InputAxis CurrentFrameRawAxis;
+    public Vector2 CurrentFrameAxis;
+    
     public bool ConfirmPressed { get; private set; }
     public bool CancelPressed { get; private set; }
     public bool MenuPressed { get; private set; }
 
     private void Update()
     {
+        // GetKeyEvent
         CurrentRawAxis = 0x00;
         CurrentAxis = Vector2.zero;
 
@@ -84,8 +88,37 @@ public class GlobalInputController : MonoBehaviour
                 CurrentRawAxis |= InputAxis.W;
             }
         }
-        
         CurrentAxis = CurrentAxis.normalized;
+        
+        // GetKeyDownEvent
+        CurrentFrameRawAxis = 0x00;
+        CurrentFrameAxis = Vector2.zero;
+
+        foreach (var axisKey in AxisKeys.Where(axisKey => Input.GetKeyDown(axisKey.Value)))
+        {
+            if (axisKey.Key.HasFlag(InputAxis.N))
+            {
+                CurrentFrameAxis.y += 1;
+                CurrentFrameRawAxis |= InputAxis.N;
+            }
+            if (axisKey.Key.HasFlag(InputAxis.S))
+            {
+                CurrentFrameAxis.y -= 1;
+                CurrentFrameRawAxis |= InputAxis.S;
+            }
+            if (axisKey.Key.HasFlag(InputAxis.E))
+            {
+                CurrentFrameAxis.x += 1;
+                CurrentFrameRawAxis |= InputAxis.E;
+            }
+            if (axisKey.Key.HasFlag(InputAxis.W))
+            {
+                CurrentFrameAxis.x -= 1;
+                CurrentFrameRawAxis |= InputAxis.W;
+            }
+        }
+        
+        CurrentFrameAxis = CurrentFrameAxis.normalized;
         
         ConfirmPressed = Input.GetKeyDown(confirm);
         CancelPressed = Input.GetKeyDown(cancel);

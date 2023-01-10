@@ -45,6 +45,16 @@ public class Game : MonoBehaviour, IStateContainer
         {
             SetState(new Stage2Play());
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SetState(new Stage3Play());
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // YieldState(new YieldForEvent(new ));
+        }
     }
     
     public IState CurrentState { get; private set; }
