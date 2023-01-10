@@ -7,6 +7,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewDialogueEvent", menuName = "Dialogue/Create Dialogue Event", order = 2)]
 public class DialogueScript : ScriptableObject
 {
+	public int Count => DialogueEvents?.Count ?? 0;
+	
+	public bool fadeOnStart;
+	
 	[SerializeField]
     public List<DialogueEventData> DialogueEvents;
 }
@@ -18,6 +22,7 @@ public enum DialogueEventType{
 	Image,
 	Shake,
 	Fade,
+	Choice,
 }
 
 [Serializable]
@@ -42,4 +47,7 @@ public class DialogueEventData
 	// FadeEvent
 	public float Destination;
 	public Color Color;
+	
+	// ChoiceEvent
+	public List<string> Choices;
 }

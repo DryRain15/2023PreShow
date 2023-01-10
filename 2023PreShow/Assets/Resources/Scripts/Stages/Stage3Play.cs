@@ -13,7 +13,7 @@ public class Stage3Play : IState
 	public bool IsYield { get; set; } = false;
 	public bool IsStarted { get; set; } = false;
 
-	public float Speed = 4f;
+	public float Speed = 3f;
 
 	private Vector2 _velocity;
 	private Vector2 _position;
@@ -33,7 +33,6 @@ public class Stage3Play : IState
 
 	public void OnState()
 	{
-		//TODO: Implement for stage play
 		var dt = Time.deltaTime;
 		var raw = GlobalInputController.Instance.CurrentFrameRawAxis;
 		// Inverted input axis
@@ -44,8 +43,6 @@ public class Stage3Play : IState
 		// {
 		// 	_innerTimer -= dt;
 		// }
-		
-		// TODO: Implement Interaction Button here
 
 		_velocity += Speed * axis;
 		_velocity = _velocity.normalized * MathF.Min(_velocity.magnitude, Speed * 4f);
@@ -55,7 +52,7 @@ public class Stage3Play : IState
 		Game.Instance.Player.ShakeLeg(raw);
 
 		Game.Instance.Player.Position += _velocity.ToVector3() * dt;
-		_velocity *= 1 - dt * 0.5f;
+		_velocity *= 1 - dt * 0.1f;
 	}
 
 	public void OnEndState()

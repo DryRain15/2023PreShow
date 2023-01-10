@@ -20,7 +20,7 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 			case 4:
 				return 120f;
 			default:
-				return 46f;
+				return 70f;
 		}
 	}
 	
@@ -66,6 +66,7 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 				tempRect.y += m_h;
 				break;
 			default:
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Duration"));
 				break;
 		}
 		

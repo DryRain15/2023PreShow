@@ -12,3 +12,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7f751a27008cf4b9a21ad91b25963a, type: 3}
   m_Name: TestDialogue
   m_EditorClassIdentifier: 
+  DialogueEvents:
+  - _type: 0
+    Wait: 1
+    Duration: 1
+    Text: prologue_speech_0_1
+    Speaker: 
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 4
+    Wait: 1
+    Duration: 0
+    Text: prologue_speech_0_1
+    Speaker: 
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 1
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 4
+    Wait: 1
+    Duration: 1
+    Text: prologue_speech_0_1
+    Speaker: 
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 1
+    Wait: 1
+    Duration: 0
+    Text: prologue_speech_0_1
+    Speaker: 
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 1
+    Wait: 1
+    Duration: 0
+    Text: prologue_speech_0_2
+    Speaker: 
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 1
+    Wait: 1
+    Duration: 0
+    Text: prologue_speech_0_3
+    Speaker: 
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 1
+    Wait: 1
+    Duration: 0
+    Text: prologue_speech_0_4
+    Speaker: 
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 1
+    Wait: 1
+    Duration: 0
+    Text: prologue_speech_1_4
+    Speaker: 
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 3
+    Wait: 1
+    Duration: 3
+    Text: prologue_speech_2_4
+    Speaker: Overriden
+    Image: {fileID: 0}
+    Power: 10
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 1
+    Wait: 1
+    Duration: 0
+    Text: prologue_speech_2_4
+    Speaker: Overriden
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 4
+    Wait: 1
+    Duration: 1
+    Text: prologue_speech_2_4
+    Speaker: Overriden
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 1
+    Color: {r: 0, g: 0, b: 0, a: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 1
+    Text: prologue_speech_2_4
+    Speaker: Overriden
+    Image: {fileID: 0}
+    Power: 0
+    Destination: 1
+    Color: {r: 0, g: 0, b: 0, a: 0}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using Proto.BasicExtensionUtils;
 using Proto.Interfaces;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class Game : MonoBehaviour, IStateContainer
 {
     public static Game Instance { get; private set; }
 
+    public DialogueScript TestScript;
+    
     public List<Path> Paths = new List<Path>();
     
     public Player Player;
@@ -28,7 +31,6 @@ public class Game : MonoBehaviour, IStateContainer
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -53,12 +55,12 @@ public class Game : MonoBehaviour, IStateContainer
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // YieldState(new YieldForEvent(new ));
+            YieldState(new YieldForEvent(TestScript));
         }
     }
     
     public IState CurrentState { get; private set; }
-	
+
     public void SetState(IState state, bool doOverride = false)
     {
         OnChangeState();
