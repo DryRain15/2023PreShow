@@ -13,7 +13,7 @@ public class Stage3Play : IState
 	public bool IsYield { get; set; } = false;
 	public bool IsStarted { get; set; } = false;
 
-	public float Speed = 3f;
+	public float Speed = 2f;
 
 	private Vector2 _velocity;
 	private Vector2 _position;
@@ -45,7 +45,7 @@ public class Stage3Play : IState
 		// }
 
 		_velocity += Speed * axis;
-		_velocity = _velocity.normalized * MathF.Min(_velocity.magnitude, Speed * 4f);
+		_velocity = _velocity.normalized * MathF.Min(_velocity.magnitude, Speed * 6f);
 		// _innerTimer += 0.1f;
 
 		// _prevAxis = axis;

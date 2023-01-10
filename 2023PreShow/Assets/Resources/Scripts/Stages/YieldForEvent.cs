@@ -15,7 +15,7 @@ public class YieldForEvent : IState
 	public bool IsStarted { get; set; } = false;
 
 	public DialogueScript CurrentDialogue;
-	private Dictionary<string, Dictionary<string, object>> _textData;
+	private Dictionary<string, Dictionary<string, string>> _textData;
 
 	private int _currentLine = 0;
 	private float _innerTimer;
@@ -82,8 +82,6 @@ public class YieldForEvent : IState
 		}
 		
 		var data = CurrentDialogue.DialogueEvents[_currentLine];
-		
-		Debug.Log($"CurrentStep : {_currentLine}");
 
 		switch (data.Type)
 		{
@@ -99,23 +97,19 @@ public class YieldForEvent : IState
 				}
 				break;
 			case DialogueEventType.Speech:
-				string rawText = 
-					Encoding.Default.GetString(
-						Encoding.Default.GetBytes(
-					_textData.ContainsKey(data.Text) 
-						? _textData[data.Text]["Content"].ToString() : data.Text));
-				string rawSpeaker = 
-					Encoding.Default.GetString(
-					Encoding.Default.GetBytes(
-						(data.Speaker.Length == 0) ?
+				string rawText = _textData.ContainsKey(data.Text) 
+						? _textData[data.Text]["Content"] : data.Text;
+				string rawSpeaker = (data.Speaker.Length == 0) ?
 				                    (_textData.ContainsKey(data.Text) 
-					                    ? _textData[data.Text]["Speaker"].ToString() 
-					                    : data.Speaker) : data.Speaker));
+					                    ? _textData[data.Text]["Speaker"]
+					                    : data.Speaker) : data.Speaker;
 				if (data.Wait && _innerTimer <= data.Text.Length * 0.08f)
 				{
-					string outText = Encoding.Default.GetString(
-						Encoding.Default.GetBytes(rawText.Substring(0, 
-						Mathf.Min(rawText.Length, (int)(_innerTimer / 0.08f)))));
+					string outText = rawText.Substring(0, 
+						Mathf.Min(rawText.Length, (int)(_innerTimer / 0.08f)));
+					
+					outText = Encoding.Default.GetString(
+							Encoding.Default.GetBytes(outText));
 					SpeechContainer.Instance.SetText(rawSpeaker, outText);
 					
 					if (GlobalInputController.Instance.ConfirmPressed)
@@ -181,14 +175,12 @@ public class YieldForEvent : IState
 				for (int idx = 0; idx < data.Choices.Count; idx++)
 				{
 					var choice = data.Choices[idx];
-					var marker = ChoiceCache >= 0 ? "▶" : "";
+					var marker = ChoiceCache == idx ? "▶" : "";
 					var rawChoice = _textData.ContainsKey(choice) ? _textData[choice]["Content"].ToString() : choice;
-					rawChoices += marker + "/t" + rawChoice + "\n";
+					rawChoices += marker + "\t" + rawChoice + "\n";
 				}
-
-				rawChoices =
-					Encoding.Default.GetString(
-						Encoding.Default.GetBytes(rawChoices));
+				
+				SpeechContainer.Instance.SetText("", rawChoices);
 				
 				if (_innerTimer < dt + Constants.Epsilon)
 				{

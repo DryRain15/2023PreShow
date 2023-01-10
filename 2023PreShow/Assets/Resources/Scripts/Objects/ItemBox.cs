@@ -26,7 +26,8 @@ public class ItemBox : MonoBehaviour
 
     private void Update()
     {
-        var hit = Physics2D.BoxCast(transform.position, collider.size, 0, Vector2.zero);
+        var hit = Physics2D.BoxCast(transform.position, collider.size, 0, 
+            Vector2.zero, 0, 1 << LayerMask.NameToLayer("Player"));
 
         if (hit)
         {

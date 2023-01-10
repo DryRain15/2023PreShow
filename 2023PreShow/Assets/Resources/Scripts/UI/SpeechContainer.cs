@@ -58,6 +58,7 @@ public class SpeechContainer : MonoBehaviour
     // TODO: Transition needed
     public void Hide()
     {
+        SetText("", "");
         speechContainer.SetActive(false);
     }
 }
