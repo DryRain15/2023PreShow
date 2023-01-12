@@ -12,64 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7f751a27008cf4b9a21ad91b25963a, type: 3}
   m_Name: TestDialogue
   m_EditorClassIdentifier: 
-  fadeOnStart: 0
+  fadeOnStart: 1
   DialogueEvents:
   - _type: 0
     Wait: 1
-    Duration: 1
-    Text: prologue_speech_0_1
-    Speaker: 
-    Image: {fileID: 0}
-    Power: 0
-    Destination: 0
-    Color: {r: 0, g: 0, b: 0, a: 0}
-    Choices: []
-  - _type: 4
-    Wait: 1
     Duration: 0
-    Text: prologue_speech_0_1
-    Speaker: 
-    Image: {fileID: 0}
-    Power: 0
-    Destination: 1
-    Color: {r: 0, g: 0, b: 0, a: 0}
-    Choices: []
-  - _type: 4
-    Wait: 1
-    Duration: 1
-    Text: prologue_speech_0_1
-    Speaker: 
-    Image: {fileID: 0}
-    Power: 0
-    Destination: 0
-    Color: {r: 0, g: 0, b: 0, a: 0}
-    Choices: []
-  - _type: 1
-    Wait: 1
-    Duration: 0
-    Text: prologue_speech_0_1
-    Speaker: 
-    Image: {fileID: 0}
-    Power: 0
-    Destination: 0
-    Color: {r: 0, g: 0, b: 0, a: 0}
-    Choices: []
-  - _type: 1
-    Wait: 1
-    Duration: 0
+    TextboxOff: 1
+    ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
     Image: {fileID: 0}
-    Power: 0
-    Destination: 0
-    Color: {r: 0, g: 0, b: 0, a: 0}
-    Choices: []
-  - _type: 5
-    Wait: 1
-    Duration: 0
-    Text: prologue_speech_0_2
-    Speaker: 
-    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
     Power: 0
     Destination: 0
     Color: {r: 0, g: 0, b: 0, a: 0}
@@ -77,3 +35,156 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_2
+    Speaker: 
+    Image: {fileID: 21300000, guid: a162f3b48131dd04da5e7c41f0175bd8, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 546.6
+      height: 640.7765
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - "10\uC5B5\uBC1B\uAE30"
+    - "\uACE0\uC790\uB418\uAE30"
+    - "\uB3C4\uB9DD\uAC04\uB2E4"
+  - _type: 0
+    Wait: 1
+    Duration: 0.3
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_1
+    Speaker: 
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+  - _type: 4
+    Wait: 1
+    Duration: 2
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_1
+    Speaker: 
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_2
+    Speaker: 
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - "10\uC5B5\uBC1B\uAE30"
+    - "\uACE0\uC790\uB418\uAE30"
+    - "\uB3C4\uB9DD\uAC04\uB2E4"
+  - _type: 1
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_1
+    Speaker: 
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+  - _type: 1
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_2
+    Speaker: 
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+  - _type: 5
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_2
+    Speaker: 
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - "10\uC5B5\uBC1B\uAE30"
+    - "\uACE0\uC790\uB418\uAE30"
+    - "\uB3C4\uB9DD\uAC04\uB2E4"
+  - _type: 4
+    Wait: 1
+    Duration: 1
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_1
+    Speaker: 
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []

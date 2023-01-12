@@ -29,14 +29,16 @@ public class Stage2Play : IState
 		IsStarted = true;
 		
 		Game.Instance.Player.Position = Vector3.zero;
+		
+		TitleContainer.Instance.SetTitle("title_stage_2");
 	}
 
 	public void OnState()
 	{
 		//TODO: Implement for stage play
 		var dt = Time.deltaTime;
-		var raw = GlobalInputController.Instance.CurrentRawAxis;
-		var axis = GlobalInputController.Instance.CurrentAxis;
+		var raw = GlobalInputController.Instance.CurrentFrameRawAxis;
+		var axis = GlobalInputController.Instance.CurrentFrameAxis;
 
 		// Input delay(deprecated)
 		// if (_innerTimer > 0f)
@@ -44,8 +46,6 @@ public class Stage2Play : IState
 		// 	_innerTimer -= dt;
 		// }
 		
-		// TODO: Implement Interaction Button here
-
 		// Only Adjacent Axis input should be accepted
 		if (Vector2.Dot(axis, _prevAxis).IsBetween(0.1f, 0.9f) || _prevAxis.magnitude < Constants.Epsilon)
 		{

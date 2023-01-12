@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TwitchConnectData
   m_EditorClassIdentifier: 
   twitchConnectConfig:
-    username: USERNAME
-    userToken: USERNAME_TOKEN
-    channelName: USERNAME_CHANNEL
+    username: devdryrain
+    userToken: oauth:tt8631yzclmkutu6amknykfjno33ua
+    channelName: dryrain15

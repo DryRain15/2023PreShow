@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Proto.BasicExtensionUtils;
 using Unity.VisualScripting;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 [Serializable]
 public class AdjacentPathDictionary : SerializableDictionary<int, float>{}
@@ -24,6 +25,8 @@ public class Path
     
     public AdjacentPathDictionary adjacentPaths = new AdjacentPathDictionary();
     
+    private LineRenderer _lineRenderer;
+    
     public Path(Vector2 startPoint, Vector2 endPoint)
     {
         this.startPoint = startPoint;
@@ -36,6 +39,36 @@ public class Path
         this.endPoint = endPoint;
     }
 
+    public void Initiate()
+    {
+        if (!_lineRenderer)
+        {
+            Validate();
+            
+            var go = new GameObject($"Path_{id}");
+            go.transform.SetParent(Game.Instance.Storage);
+            _lineRenderer = go.AddComponent<LineRenderer>();
+            
+            _lineRenderer.positionCount = 2;
+            _lineRenderer.startColor = Color.white;
+            _lineRenderer.endColor = Color.white;
+            _lineRenderer.startWidth = 0.2f;
+            _lineRenderer.endWidth = 0.2f;
+            _lineRenderer.material = ResourceStorage.Instance.lineMaterial;
+            _lineRenderer.SetPosition(0, startPoint);
+            _lineRenderer.SetPosition(1, endPoint);
+        }
+    }
+
+    public void Eliminate()
+    {
+        if (_lineRenderer)
+        {
+            GameObject.Destroy(_lineRenderer.gameObject);
+            _lineRenderer = null;
+        }
+    }
+    
     public Vector2 GetPoint(float p)
     {
         return startPoint + direction * p;
@@ -69,42 +102,5 @@ public class Path
         
         Gizmos.DrawSphere(startPoint, 0.15f);
         Gizmos.DrawSphere(endPoint, 0.15f);
-    }
-}
-
-[Serializable]
-public class Contact
-{
-    private Path _self;
-    private Path _other;
-    public Path Other => _other;
-    public float portion;
-    public Vector2 direction;
-
-    public Vector2 StartPoint { get; private set; }
-    public Vector2 EndPoint { get; private set; }
-
-    public Contact(Path self, float portion, Vector2 direction)
-    {
-        this._self = self;
-        this.portion = portion;
-        this.direction = direction;
-
-        StartPoint = self.startPoint + (self.direction * portion);
-        EndPoint = StartPoint + direction;
-        this._other = new Path(StartPoint, EndPoint);
-    }
-
-    public void Validate(Path self)
-    {
-        if (_self is null || _other is null)
-        {
-            this._self ??= self;
-            StartPoint = self.startPoint + (self.direction * portion);
-            EndPoint = StartPoint + direction;
-            this._other ??= new Path(StartPoint, EndPoint);
-        }
-        
-        Other?.SetPath(StartPoint, EndPoint);
     }
 }

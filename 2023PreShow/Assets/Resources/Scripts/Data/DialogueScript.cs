@@ -34,12 +34,17 @@ public class DialogueEventData
 	public bool Wait = true;
 	public float Duration;
 	
+	// EmptyEvent
+	public bool TextboxOff = false;
+	public bool ImageOff = false;
+	
 	// SpeechEvent
 	public string Text;
 	public string Speaker;
 	
 	// ImageEvent
 	public Sprite Image;
+	public Rect ImageRect;
 	
 	// ShakeEvent
 	public float Power;

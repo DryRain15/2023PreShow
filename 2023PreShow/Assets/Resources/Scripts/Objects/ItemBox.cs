@@ -24,7 +24,7 @@ public class ItemBox : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         var hit = Physics2D.BoxCast(transform.position, collider.size, 0, 
             Vector2.zero, 0, 1 << LayerMask.NameToLayer("Player"));
@@ -50,12 +50,16 @@ public class ItemBox : MonoBehaviour
 
     void OnHover()
     {
+        if (isRevealed) return;
+
         // TODO: test code
         spriteRenderer.color = Color.red;
     }
     
     void OnLeave()
     {
+        if (isRevealed) return;
+
         // TODO: test code
         spriteRenderer.color = Color.cyan;
     }
@@ -69,6 +73,7 @@ public class ItemBox : MonoBehaviour
         if (level > 9)
         {
             isRevealed = true;
+            spriteRenderer.color = new Color(1f, 1f, 1f, 0f);
         }
     }
 }

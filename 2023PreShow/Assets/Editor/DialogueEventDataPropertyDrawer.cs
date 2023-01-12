@@ -14,15 +14,15 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 			case 1:
 				return 96f;
 			case 2:
-				return 96f;
+				return 144f;
 			case 3:
 				return 96f;
 			case 4:
 				return 120f;
 			case 5:
-				return 84f + property.FindPropertyRelative("Choices").arraySize * 24f;;
+				return 84f + property.FindPropertyRelative("Choices").arraySize * 24f;
 			default:
-				return 70f;
+				return 120f;
 		}
 	}
 	
@@ -50,6 +50,8 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 			case 2:
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Image"));
 				tempRect.y += m_h;
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("ImageRect"));
+				tempRect.y += m_h * 2;
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Duration"));
 				tempRect.y += m_h;
 				break;
@@ -73,6 +75,11 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 				break;
 			default:
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Duration"));
+				tempRect.y += m_h;
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("TextboxOff"));
+				tempRect.y += m_h;
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("ImageOff"));
+				tempRect.y += m_h;
 				break;
 		}
 		

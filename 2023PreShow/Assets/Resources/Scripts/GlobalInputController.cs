@@ -7,6 +7,7 @@ using UnityEngine;
 [Flags]
 public enum InputAxis
 {
+    None = 0x00,
     N = 0x01,
     S = 0x02,
     E = 0x04,
@@ -44,6 +45,20 @@ public class GlobalInputController : MonoBehaviour
         { InputAxis.N|InputAxis.W, KeyCode.Q }
     };
 
+
+    public InputAxis[] TwitchKeys = 
+    {
+        InputAxis.S|InputAxis.W,
+        InputAxis.S,
+        InputAxis.S|InputAxis.E,
+        InputAxis.W,
+        InputAxis.None,
+        InputAxis.E,
+        InputAxis.N|InputAxis.W,
+        InputAxis.N,
+        InputAxis.N|InputAxis.E,
+    };
+
     public KeyCode confirm = KeyCode.S;
     public KeyCode cancel = KeyCode.F;
     
@@ -55,16 +70,21 @@ public class GlobalInputController : MonoBehaviour
     public InputAxis CurrentFrameRawAxis;
     public Vector2 CurrentFrameAxis;
     
-    public bool ConfirmPressed { get; private set; }
-    public bool CancelPressed { get; private set; }
-    public bool MenuPressed { get; private set; }
+    public bool ConfirmPressed { get; set; }
+    public bool CancelPressed { get; set; }
+    public bool MenuPressed { get; set; }
 
-    private void Update()
+    public void OnUpdate()
     {
-        // GetKeyEvent
         CurrentRawAxis = 0x00;
+        CurrentFrameRawAxis = 0x00;
         CurrentAxis = Vector2.zero;
+        CurrentFrameAxis = Vector2.zero;
 
+        ConfirmPressed = false;
+        CancelPressed = false;
+        MenuPressed = false;
+        
         foreach (var axisKey in AxisKeys.Where(axisKey => Input.GetKey(axisKey.Value)))
         {
             if (axisKey.Key.HasFlag(InputAxis.N))
@@ -89,10 +109,6 @@ public class GlobalInputController : MonoBehaviour
             }
         }
         CurrentAxis = CurrentAxis.normalized;
-        
-        // GetKeyDownEvent
-        CurrentFrameRawAxis = 0x00;
-        CurrentFrameAxis = Vector2.zero;
 
         foreach (var axisKey in AxisKeys.Where(axisKey => Input.GetKeyDown(axisKey.Value)))
         {
@@ -120,8 +136,8 @@ public class GlobalInputController : MonoBehaviour
         
         CurrentFrameAxis = CurrentFrameAxis.normalized;
         
-        ConfirmPressed = Input.GetKeyDown(confirm);
-        CancelPressed = Input.GetKeyDown(cancel);
-        MenuPressed = Input.GetKeyDown(menu);
+        ConfirmPressed = ConfirmPressed || Input.GetKeyDown(confirm);
+        CancelPressed = CancelPressed || Input.GetKeyDown(cancel);
+        MenuPressed = MenuPressed || Input.GetKeyDown(menu);
     }
 }

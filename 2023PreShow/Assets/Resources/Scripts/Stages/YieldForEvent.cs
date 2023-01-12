@@ -86,6 +86,12 @@ public class YieldForEvent : IState
 		switch (data.Type)
 		{
 			case DialogueEventType.None:
+				if (data.ImageOff)
+					ImageContainer.Instance.HideImage();
+				
+				if (data.TextboxOff)
+					SpeechContainer.Instance.Hide();
+				
 				if (data.Wait && _innerTimer < data.Duration)
 				{
 					return;
@@ -103,6 +109,10 @@ public class YieldForEvent : IState
 				                    (_textData.ContainsKey(data.Text) 
 					                    ? _textData[data.Text]["Speaker"]
 					                    : data.Speaker) : data.Speaker;
+				
+				if (_innerTimer < dt + Constants.Epsilon)
+					SpeechContainer.Instance.Show();
+				
 				if (data.Wait && _innerTimer <= data.Text.Length * 0.08f)
 				{
 					string outText = rawText.Substring(0, 
@@ -130,12 +140,32 @@ public class YieldForEvent : IState
 				}
 				break;
 			case DialogueEventType.Image:
+				var targetImage = data.Image;
+				
+				if (_innerTimer < dt + Constants.Epsilon)
+				{
+					if (targetImage is not null)
+					{
+						ImageContainer.Instance.ShowImage();
+						ImageContainer.Instance.SetImage(targetImage, data.ImageRect);
+					}
+				}
 				if (data.Wait && _innerTimer < data.Duration)
 				{
+					if (targetImage is null)
+					{
+						ImageContainer.Instance.SetAlpha(1f - _innerTimer / data.Duration);
+					}
+					else
+					{
+						ImageContainer.Instance.SetAlpha(_innerTimer / data.Duration);
+					}
 					return;
 				}
 				else
 				{
+					if (targetImage is null)
+						ImageContainer.Instance.SetImage(null);
 					_currentLine++;
 					_innerTimer = 0f;
 				}
@@ -179,6 +209,9 @@ public class YieldForEvent : IState
 					var rawChoice = _textData.ContainsKey(choice) ? _textData[choice]["Content"].ToString() : choice;
 					rawChoices += marker + "\t" + rawChoice + "\n";
 				}
+				
+				if (_innerTimer < dt + Constants.Epsilon)
+					SpeechContainer.Instance.Show();
 				
 				SpeechContainer.Instance.SetText("", rawChoices);
 				

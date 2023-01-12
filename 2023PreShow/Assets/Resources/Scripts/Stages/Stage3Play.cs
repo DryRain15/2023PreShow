@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using Proto.BasicExtensionUtils;
 using Proto.CustomDebugTool;
 using Proto.Interfaces;
+using TwitchChatConnect.Client;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Stage3Play : IState
 {
@@ -29,6 +31,8 @@ public class Stage3Play : IState
 		IsStarted = true;
 		
 		Game.Instance.Player.Position = Vector3.zero;
+		
+		TitleContainer.Instance.SetTitle("title_stage_3");
 	}
 
 	public void OnState()
@@ -38,10 +42,22 @@ public class Stage3Play : IState
 		// Inverted input axis
 		var axis = GlobalInputController.Instance.CurrentFrameAxis * -1f;
 
+		_innerTimer += dt;
+
 		// Input delay(deprecated)
-		// if (_innerTimer > 0f)
+		// if (_innerTimer > 2f)
 		// {
-		// 	_innerTimer -= dt;
+		// 	_innerTimer = 0f;
+		// {
+		// 	TwitchChatClient.instance.SendChatMessage($"!입력 {Mathf.FloorToInt(Random.value * 8.9999f + 1f)}");
+		// 	GlobalInputController.Instance.CurrentFrameRawAxis
+		// 		= GlobalInputController.Instance.TwitchKeys[dir-1];
+		// 	GlobalInputController.Instance.CurrentFrameAxis
+		// 		= GlobalInputController.Instance.CurrentFrameRawAxis.GetDirection();
+		//
+		// 	if (dir == 5)
+		// 		GlobalInputController.Instance.ConfirmPressed = true;
+		// }
 		// }
 
 		_velocity += Speed * axis;
