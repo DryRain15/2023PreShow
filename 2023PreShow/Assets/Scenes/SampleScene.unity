@@ -1060,83 +1060,46 @@ MonoBehaviour:
   TestScript: {fileID: 11400000, guid: 23d9375d71abf234ba4f01c76f2f38f6, type: 2}
   Paths:
   - id: 0
-    startPoint: {x: 0, y: -1}
-    endPoint: {x: 0, y: 2}
+    startPoint: {x: 0, y: -10}
+    endPoint: {x: 0, y: 10}
     parentIdx: -1
     portion: 0
-    direction: {x: 0, y: 3}
-    adjacentPaths:
-      m_keys: 010000000500000006000000
-      m_values:
-      - 0.4
-      - 1
-      - 1
-  - id: 1
-    startPoint: {x: 0, y: 0.20000005}
-    endPoint: {x: 2, y: 0.20000005}
-    parentIdx: 0
-    portion: 0.4
-    direction: {x: 2, y: 0}
-    adjacentPaths:
-      m_keys: 000000000200000004000000
-      m_values:
-      - 0
-      - 1
-      - 1
-  - id: 2
-    startPoint: {x: 2, y: 0.20000005}
-    endPoint: {x: 4, y: 2.2}
-    parentIdx: 1
-    portion: 1
-    direction: {x: 2, y: 2}
-    adjacentPaths:
-      m_keys: 010000000300000004000000
-      m_values:
-      - 0
-      - 1
-      - 0
-  - id: 3
-    startPoint: {x: 4, y: 2.2}
-    endPoint: {x: 6, y: 2.2}
-    parentIdx: 2
-    portion: 1
-    direction: {x: 2, y: 0}
-    adjacentPaths:
-      m_keys: 02000000
-      m_values:
-      - 0
-  - id: 4
-    startPoint: {x: 2, y: 0.20000005}
-    endPoint: {x: 2, y: -2.8}
-    parentIdx: 1
-    portion: 1
-    direction: {x: 0, y: -3}
+    direction: {x: 0, y: 20}
     adjacentPaths:
       m_keys: 0100000002000000
       m_values:
-      - 0
-      - 0
-  - id: 5
-    startPoint: {x: 0, y: 2}
-    endPoint: {x: -2, y: 2}
+      - 0.7
+      - 0.2
+  - id: 1
+    startPoint: {x: 0, y: 4}
+    endPoint: {x: 5, y: 9}
     parentIdx: 0
-    portion: 1
-    direction: {x: -2, y: 0}
+    portion: 0.7
+    direction: {x: 5, y: 5}
     adjacentPaths:
-      m_keys: 0000000006000000
+      m_keys: 00000000
       m_values:
       - 0
-      - 0
-  - id: 6
-    startPoint: {x: 0, y: 2}
-    endPoint: {x: 2, y: 2}
+  - id: 2
+    startPoint: {x: 0, y: -6}
+    endPoint: {x: 5, y: -6}
     parentIdx: 0
-    portion: 1
-    direction: {x: 2, y: 0}
+    portion: 0.2
+    direction: {x: 5, y: 0}
     adjacentPaths:
-      m_keys: 0000000005000000
+      m_keys: 0000000003000000
       m_values:
       - 0
+      - 1
+  - id: 3
+    startPoint: {x: 5, y: -6}
+    endPoint: {x: 5, y: 9}
+    parentIdx: 2
+    portion: 1
+    direction: {x: 0, y: 15}
+    adjacentPaths:
+      m_keys: 02000000
+      m_values:
       - 0
   TwitchState: {fileID: 2068262907}
 --- !u!4 &682493249
@@ -1559,7 +1522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -2716,7 +2679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
