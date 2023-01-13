@@ -13,4 +13,26 @@ MonoBehaviour:
   m_Name: TentacleIntro
   m_EditorClassIdentifier: 
   defaultDuration: 100
-  spriteSequence: []
+  spriteSequence:
+  - sprite: {fileID: 268825124, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: 509031784, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -1541874586, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -975100115, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: 50932341, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: 1679202257, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -159442235, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -1118027457, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -1411150355, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -939111662, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: 1405941656, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100

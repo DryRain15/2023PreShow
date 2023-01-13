@@ -37,6 +37,8 @@ public class SpeechContainer : MonoBehaviour
     {
         this.mSpeaker.text = speaker;
         this.mSpeech.text = speech;
+        mSpeaker.color = Color.white;
+        mSpeech.color = Color.white;
     }
     
     public void SetText(string speech)

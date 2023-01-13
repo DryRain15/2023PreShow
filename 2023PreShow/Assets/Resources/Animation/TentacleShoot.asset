@@ -13,4 +13,16 @@ MonoBehaviour:
   m_Name: TentacleShoot
   m_EditorClassIdentifier: 
   defaultDuration: 100
-  spriteSequence: []
+  spriteSequence:
+  - sprite: {fileID: 1415266839, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -1577514431, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -1282381710, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -1439964178, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -1487227930, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: 1606311629, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100

@@ -165,5 +165,15 @@ namespace Proto.BasicExtensionUtils
         {
             return new Vector2(vec.y, -vec.x);
         }
+        
+        public static Vector2 GetReflection(this Vector2 vec, Vector2 normal)
+        {
+            return Vector2.Reflect(vec, normal);
+        }
+        
+        public static Vector2 GetReflection(this Vector2 vec)
+        {
+            return new Vector2(-vec.x, -vec.y);
+        }
     }
 }

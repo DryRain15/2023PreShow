@@ -14,6 +14,14 @@ public class CustomAnimation : ScriptableObject
 
     public SpriteFrame GetFrame(int frame)
     {
+        if (spriteSequence is null || spriteSequence.Count <= frame)
+        {
+            return new SpriteFrame()
+            {
+                sprite = ResourceStorage.Instance.emptySprite,
+                duration = 100,
+            };;
+        }
         return spriteSequence[frame];
     }
 

@@ -9,6 +9,8 @@ public class ResourceStorage : MonoBehaviour
     
     public Material lineMaterial;
 
+    public Sprite emptySprite;
+
     public DialogueScript prologue;
     public DialogueScript ask;
 

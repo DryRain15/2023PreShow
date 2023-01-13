@@ -149,32 +149,50 @@ public class Game : MonoBehaviour, IStateContainer
             return;
         }
 
-        foreach (var path in Paths)
+        for (var idx = 0; idx < Paths.Count; idx++)
         {
+            var path = Paths[idx];
+            path.id = idx;
+            if (idx > 0)
+                path.Parent = Paths[path.parentIdx];
             path.adjacentPaths = new AdjacentPathDictionary();
         }
 
         for (var idx = 0; idx < Paths.Count; idx++)
         {
             var path = Paths[idx];
-            if (path.parentIdx >= 0 && path.parentIdx < Paths.Count)
+            
+            // Use Dot Product to get distance between the point and the vector
+            foreach (var aP in Paths)
             {
-                path.Parent = Paths[path.parentIdx];
-                path.adjacentPaths.Add(path.parentIdx, 0f);
-                path.Parent.adjacentPaths.Add(idx, path.portion);
+                if (aP.id == idx)
+                    continue;
 
-                // Use Dot Product to get distance between the point and the vector
-                foreach (var (adjIdx, por) in path.Parent.adjacentPaths)
+                var aPsp = aP.GetPoint(0f);
+                var aPep = aP.GetPoint(1f);
+
+                var ps2Apsp = aPsp - path.startPoint;
+                var ps2Apep = aPep - path.startPoint;
+
+                if (Vector2.Dot(ps2Apsp, path.direction.GetLeftPerpendicular()).Abs()/path.direction.magnitude < 0.12f)
                 {
-                    if (Math.Abs(por - path.portion) < Constants.Epsilon && idx != adjIdx)
+                    var dist = Vector2.Dot(ps2Apsp, path.direction) / path.direction.sqrMagnitude;
+                    if (dist is >= 0f and <= 1f)
                     {
-                        path.adjacentPaths.Add(adjIdx, 0f);
-                        Paths[adjIdx].adjacentPaths.Add(idx, 0f);
+                        path.adjacentPaths[aP.id] = dist;
+                        aP.adjacentPaths[idx] = 0f;
+                    }
+                }
+                else if (Vector2.Dot(ps2Apep, path.direction.GetLeftPerpendicular()).Abs()/path.direction.magnitude < 0.12f)
+                {
+                    var dist = Vector2.Dot(ps2Apep, path.direction) / path.direction.sqrMagnitude;
+                    if (dist is >= 0f and <= 1f)
+                    {
+                        path.adjacentPaths[aP.id] = dist;
+                        aP.adjacentPaths[idx] = 1f;
                     }
                 }
             }
-
-            path.id = idx;
             
             path.Validate();
         }

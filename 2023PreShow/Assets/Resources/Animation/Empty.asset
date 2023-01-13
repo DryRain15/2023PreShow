@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc9aa1431a309a4c833b69a618b0d78, type: 3}
   m_Name: Empty
   m_EditorClassIdentifier: 
-  defaultDuration: 100
-  spriteSequence: []
+  defaultDuration: 112
+  spriteSequence:
+  - sprite: {fileID: -632765843, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: 1778889656, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -247430136, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: 1374203390, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100

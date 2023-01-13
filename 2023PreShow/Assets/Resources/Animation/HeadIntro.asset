@@ -12,5 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc9aa1431a309a4c833b69a618b0d78, type: 3}
   m_Name: HeadIntro
   m_EditorClassIdentifier: 
-  defaultDuration: 100
-  spriteSequence: []
+  defaultDuration: 116
+  spriteSequence:
+  - sprite: {fileID: -921210220, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: -1320056644, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: 1422166687, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: 1492268971, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: 81397868, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: -102101872, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: 41226751, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: -1139663126, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: -982240681, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: -1759906031, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100
+  - sprite: {fileID: -1918657746, guid: bdf8cb7b97a51af4291f381e82e207a8, type: 3}
+    duration: 100

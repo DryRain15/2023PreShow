@@ -24,6 +24,8 @@ public class Stage1Play : IState
 	private Vector2 _position;
 	private Vector2 _velocity;
 
+	private Player _player;
+
 	private float _innerTime = 0f;
 
 	public void OnStartState()
@@ -38,11 +40,11 @@ public class Stage1Play : IState
 			path.Initiate();
 		}
 
-		var player = Game.Instance.Player;
-		player.Position = _currentPath.startPoint + _progress * _currentPath.direction;
-		CameraFollow.Instance.target = player.transform;
+		_player = Game.Instance.Player;
+		_player.Position = _currentPath.startPoint + _progress * _currentPath.direction;
+		CameraFollow.Instance.target = _player.transform;
 
-		player.PlayIntroScene(() => { TitleContainer.Instance.SetTitle("title_stage_1"); });
+		_player.PlayIntroScene(() => { TitleContainer.Instance.SetTitle("title_stage_1"); });
 	}
 
 	public void OnState()
@@ -53,6 +55,8 @@ public class Stage1Play : IState
 		_velocity += axis * Speed;
 		var pos = _currentPath.startPoint + _progress * _currentPath.direction;
 
+		_player.GrabLeg(GlobalInputController.Instance.CurrentFrameRawAxis);
+		
 		_innerTime += dt;
 		
 		Dictionary<int, Vector2> adjIndex = new Dictionary<int, Vector2>();

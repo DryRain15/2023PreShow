@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: BodyIdle
   m_EditorClassIdentifier: 
   defaultDuration: 100
-  spriteSequence: []
+  spriteSequence:
+  - sprite: {fileID: 1018885454, guid: a430e83ecb6d66b43a34a9e0f2b0b260, type: 3}
+    duration: 100
+  - sprite: {fileID: -2061917621, guid: a430e83ecb6d66b43a34a9e0f2b0b260, type: 3}
+    duration: 100
+  - sprite: {fileID: 1982287650, guid: a430e83ecb6d66b43a34a9e0f2b0b260, type: 3}
+    duration: 100
+  - sprite: {fileID: 1264311660, guid: a430e83ecb6d66b43a34a9e0f2b0b260, type: 3}
+    duration: 100

@@ -17,7 +17,19 @@ public class Path
     public Vector2 startPoint;
     public Vector2 endPoint;
 
-    public Path Parent { get; set; }
+    private Path _parent;
+    public Path Parent
+    {
+        get => _parent;
+        set
+        {
+            _parent = value;
+            if (_parent is null)
+                return;
+            parentIdx = _parent.id;
+        }
+    }
+
     public int parentIdx;
     public float portion;
     public Vector2 direction;
@@ -85,10 +97,10 @@ public class Path
             return;
         }
 
-        if (Parent is null)
+        if (_parent is null)
             return;
         
-        startPoint = Parent.direction * portion + Parent.startPoint;
+        startPoint = _parent.direction * portion + _parent.startPoint;
         endPoint = startPoint + direction;
     }
     

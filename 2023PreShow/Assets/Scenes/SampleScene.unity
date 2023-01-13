@@ -1068,39 +1068,41 @@ MonoBehaviour:
     adjacentPaths:
       m_keys: 0100000002000000
       m_values:
-      - 0.7
-      - 0.2
+      - 0
+      - 1
   - id: 1
-    startPoint: {x: 0, y: 4}
-    endPoint: {x: 5, y: 9}
+    startPoint: {x: 0, y: -10}
+    endPoint: {x: 5, y: -5}
     parentIdx: 0
-    portion: 0.7
+    portion: 0
     direction: {x: 5, y: 5}
     adjacentPaths:
-      m_keys: 00000000
+      m_keys: 0000000003000000
       m_values:
       - 0
+      - 1
   - id: 2
-    startPoint: {x: 0, y: -6}
-    endPoint: {x: 5, y: -6}
+    startPoint: {x: 0, y: 10}
+    endPoint: {x: 5, y: 15}
     parentIdx: 0
-    portion: 0.2
-    direction: {x: 5, y: 0}
+    portion: 1
+    direction: {x: 5, y: 5}
     adjacentPaths:
       m_keys: 0000000003000000
       m_values:
       - 0
       - 1
   - id: 3
-    startPoint: {x: 5, y: -6}
-    endPoint: {x: 5, y: 9}
-    parentIdx: 2
+    startPoint: {x: 5, y: -5}
+    endPoint: {x: 5, y: 15}
+    parentIdx: 1
     portion: 1
-    direction: {x: 0, y: 15}
+    direction: {x: 0, y: 20}
     adjacentPaths:
-      m_keys: 02000000
+      m_keys: 0100000002000000
       m_values:
       - 0
+      - 1
   TwitchState: {fileID: 2068262907}
 --- !u!4 &682493249
 Transform:
@@ -1522,7 +1524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -1743,7 +1745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000034243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 999, y: 999, z: 0}
+  m_LocalPosition: {x: 999, y: 999, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2349,6 +2351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  emptySprite: {fileID: 1374203390, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
   prologue: {fileID: 11400000, guid: 89e0bcc7a8219af48834d06b38239548, type: 2}
   ask: {fileID: 0}
 --- !u!1 &1743614625

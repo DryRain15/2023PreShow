@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc9aa1431a309a4c833b69a618b0d78, type: 3}
   m_Name: TentacleIdle
   m_EditorClassIdentifier: 
-  defaultDuration: 100
-  spriteSequence: []
+  defaultDuration: 141
+  spriteSequence:
+  - sprite: {fileID: 431828041, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: -1412646118, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: 832284910, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100
+  - sprite: {fileID: 1761960357, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
+    duration: 100

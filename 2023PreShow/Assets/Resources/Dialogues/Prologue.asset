@@ -932,7 +932,7 @@ MonoBehaviour:
     - prologue_choice_3_1
     - prologue_choice_3_2
   - _type: 3
-    Wait: 1
+    Wait: 0
     Duration: 5
     TextboxOff: 0
     ImageOff: 0
