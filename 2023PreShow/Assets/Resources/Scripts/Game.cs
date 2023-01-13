@@ -163,6 +163,7 @@ public class Game : MonoBehaviour, IStateContainer
                 path.adjacentPaths.Add(path.parentIdx, 0f);
                 path.Parent.adjacentPaths.Add(idx, path.portion);
 
+                // Use Dot Product to get distance between the point and the vector
                 foreach (var (adjIdx, por) in path.Parent.adjacentPaths)
                 {
                     if (Math.Abs(por - path.portion) < Constants.Epsilon && idx != adjIdx)
