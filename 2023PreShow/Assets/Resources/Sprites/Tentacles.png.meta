@@ -808,6 +808,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Tentacles_33
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 288
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8a482408476164fb0a992ceb58fea5
+      internalID: -632765843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacles_34
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 292
+        width: 47
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79d130f26eb428449222beb895dc089
+      internalID: 1778889656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacles_35
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 292
+        width: 50
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa2ecb03abefa941a033c7dc65ac4c0
+      internalID: -247430136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacles_36
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 290
+        width: 68
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d300fce7fbb8324488024e07e1d5169
+      internalID: 1374203390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -821,12 +905,14 @@ TextureImporter:
     nameFileIdTable:
       Tentacles_0: 431828041
       Tentacles_12: -1411150355
+      Tentacles_35: -247430136
       Tentacles_19: 826636501
       Tentacles_15: -1912685775
       Tentacles_3: 1761960357
       Tentacles_28: -1577514431
       Tentacles_27: 1415266839
       Tentacles_25: 2023348746
+      Tentacles_33: -632765843
       Tentacles_18: -729953874
       Tentacles_24: 1094148212
       Tentacles_4: 268825124
@@ -851,7 +937,9 @@ TextureImporter:
       Tentacles_30: -1439964178
       Tentacles_7: -975100115
       Tentacles_1: -1412646118
+      Tentacles_36: 1374203390
       Tentacles_6: -1541874586
+      Tentacles_34: 1778889656
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

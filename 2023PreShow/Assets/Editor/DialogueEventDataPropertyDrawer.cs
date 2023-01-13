@@ -14,13 +14,13 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 			case 1:
 				return 96f;
 			case 2:
-				return 144f;
+				return 120f;
 			case 3:
 				return 96f;
 			case 4:
 				return 120f;
 			case 5:
-				return 84f + property.FindPropertyRelative("Choices").arraySize * 24f;
+				return 60f + property.FindPropertyRelative("Choices").arraySize * 24f;
 			default:
 				return 120f;
 		}
@@ -36,8 +36,6 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 		var tempRect = new Rect(position.x, position.y, position.width, 20f);
 		EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("_type"));
 		tempRect.y += m_h;
-		EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Wait"));
-		tempRect.y += m_h;
 		
 		switch (property.FindPropertyRelative("_type").enumValueIndex)
 		{
@@ -45,6 +43,8 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Text"));
 				tempRect.y += m_h;
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Speaker"));
+				tempRect.y += m_h;
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("TimeMult"));
 				tempRect.y += m_h;
 				break;
 			case 2:
@@ -56,12 +56,16 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 				tempRect.y += m_h;
 				break;
 			case 3:
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Wait"));
+				tempRect.y += m_h;
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Power"));
 				tempRect.y += m_h;
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Duration"));
 				tempRect.y += m_h;
 				break;
 			case 4:
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Wait"));
+				tempRect.y += m_h;
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Destination"));
 				tempRect.y += m_h;
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Color"));
@@ -74,6 +78,8 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 				tempRect.y += m_h * property.FindPropertyRelative("Choices").arraySize;
 				break;
 			default:
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Wait"));
+				tempRect.y += m_h;
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Duration"));
 				tempRect.y += m_h;
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("TextboxOff"));

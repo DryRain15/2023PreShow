@@ -7,17 +7,16 @@ public class Tentacle : MonoBehaviour
 {
     // TODO: Should be changed into custom animator 
     private SpriteRenderer _sr;
+    private CustomAnimator _animator;
 
     private const float Duration = 0.4f;
     private float _innerTimer = 0f;
     
-    public Color DefaultColor = Color.white;
-    public Color ShakeColor = Color.red;
-    public Color ScratchColor = Color.cyan;
 
     private void Awake()
     {
         _sr = GetComponentInChildren<SpriteRenderer>();
+        _animator = GetComponentInChildren<CustomAnimator>();
     }
 
     // Start is called before the first frame update
@@ -39,12 +38,16 @@ public class Tentacle : MonoBehaviour
         {
             _innerTimer = 0f;
         }
-        
-        _sr.color = Color.Lerp(DefaultColor, ShakeColor, _innerTimer / Duration);
     }
 
     public void Shake()
     {
         _innerTimer = Duration;
+    }
+
+    public void SetAnim(string key)
+    {
+        _animator.SetAnim(key);
+        _animator.SetNextAnim("TentacleIdle");
     }
 }

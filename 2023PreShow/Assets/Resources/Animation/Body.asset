@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 484560b81601ffd4eb02f65b083b3350, type: 3}
+  m_Name: Body
+  m_EditorClassIdentifier: 
+  defaultName: body
+  animMap:
+    m_keys:
+    - BodyIdle
+    - Empty
+    m_values:
+    - {fileID: 11400000, guid: 4c51ee1de87a41e49a06c88a28eeaf95, type: 2}
+    - {fileID: 11400000, guid: 7a3e5b9418e696e408670a62e726edb1, type: 2}

@@ -21,6 +21,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 0}
     ImageRect:
       serializedVersion: 2
@@ -42,6 +43,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: a162f3b48131dd04da5e7c41f0175bd8, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -63,6 +65,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_1
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 0}
     ImageRect:
       serializedVersion: 2
@@ -81,6 +84,26 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_1
     Speaker: 
+    TimeMult: 1
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+  - _type: 1
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_1
+    Speaker: 
+    TimeMult: 1
     Image: {fileID: 0}
     ImageRect:
       serializedVersion: 2
@@ -99,6 +122,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 0}
     ImageRect:
       serializedVersion: 2
@@ -118,26 +142,9 @@ MonoBehaviour:
     Duration: 0
     TextboxOff: 0
     ImageOff: 0
-    Text: prologue_speech_0_1
-    Speaker: 
-    Image: {fileID: 0}
-    ImageRect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    Power: 0
-    Destination: 0
-    Color: {r: 0, g: 0, b: 0, a: 0}
-    Choices: []
-  - _type: 1
-    Wait: 1
-    Duration: 0
-    TextboxOff: 0
-    ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 0}
     ImageRect:
       serializedVersion: 2
@@ -156,6 +163,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_3
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 0}
     ImageRect:
       serializedVersion: 2
@@ -177,13 +185,14 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 834736031bd5129449e4626f7ce754d3, type: 3}
     ImageRect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 0
-      height: 0
+      width: 1920
+      height: 1080
     Power: 0
     Destination: 0
     Color: {r: 0, g: 0, b: 0, a: 0}
@@ -198,6 +207,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_4
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 0}
     ImageRect:
       serializedVersion: 2
@@ -219,6 +229,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_5
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 0}
     ImageRect:
       serializedVersion: 2
@@ -240,6 +251,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 0}
     ImageRect:
       serializedVersion: 2
@@ -254,6 +266,27 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+  - _type: 2
+    Wait: 1
+    Duration: 1
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
   - _type: 0
     Wait: 1
     Duration: 1
@@ -261,6 +294,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -282,6 +316,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -303,6 +338,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_0_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -324,6 +360,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_1
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -345,6 +382,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_2
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -366,6 +404,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_3
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -387,6 +426,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_4
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -408,6 +448,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_5
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -429,6 +470,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_6
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -450,6 +492,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_6
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -470,6 +513,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_7
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -491,6 +535,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_8
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -512,6 +557,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_7
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -532,6 +578,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_9
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -553,6 +600,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_10
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -573,6 +621,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_12
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -594,6 +643,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_13
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -615,6 +665,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_13
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -635,6 +686,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_14
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -648,6 +700,27 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
+    Image: {fileID: 1018885454, guid: a430e83ecb6d66b43a34a9e0f2b0b260, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 128
+      height: 128
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
   - _type: 1
     Wait: 1
     Duration: 1
@@ -655,6 +728,49 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_15
     Speaker: 
+    TimeMult: 1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+  - _type: 3
+    Wait: 0
+    Duration: 0.7
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 10
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+  - _type: 1
+    Wait: 1
+    Duration: 1
+    TextboxOff: 0
+    ImageOff: 0
+    Text: "(\uB35C\uCEF9\uB35C\uCEF9)"
+    Speaker: '  '
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -675,6 +791,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_16
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -695,6 +812,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_17
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -708,6 +826,27 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+  - _type: 3
+    Wait: 0
+    Duration: 2
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 20
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
   - _type: 1
     Wait: 1
     Duration: 1
@@ -715,6 +854,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_18
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -735,6 +875,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_19
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -755,6 +896,7 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_20
     Speaker: 
+    TimeMult: 1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2
@@ -768,6 +910,48 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+  - _type: 4
+    Wait: 0
+    Duration: 5
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 1
+    Color: {r: 1, g: 1, b: 1, a: 1}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+  - _type: 3
+    Wait: 1
+    Duration: 5
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 12
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
   - _type: 1
     Wait: 1
     Duration: 1
@@ -775,6 +959,28 @@ MonoBehaviour:
     ImageOff: 0
     Text: prologue_speech_1_21
     Speaker: 
+    TimeMult: 0.5
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+  - _type: 0
+    Wait: 1
+    Duration: 3
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
     Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
     ImageRect:
       serializedVersion: 2

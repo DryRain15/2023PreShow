@@ -12,7 +12,21 @@ public class Initializing : IState
 {
     public string StateName { get; set; }
     public IState YieldState { get; set; }
-    public bool IsYield { get; set; } = false;
+
+    private bool isYield = false;
+    public bool IsYield
+    {
+        get => isYield;
+        set
+        {
+            if (isYield && !value)
+            {
+                OnYieldEnd();
+            }
+            isYield = value;
+        }
+    }
+
     public bool IsStarted { get; set; } = false;
 
     private string _userName;
@@ -61,6 +75,7 @@ public class Initializing : IState
                         
                     }
                     Debug.Log($"{command.Command} {command.Parameters[0] ?? "null"}");
+                    FadeContainer.Instance.FadeTo(1f, 0f);
                 });
                 
                 Debug.Log(TwitchUserManager.Users.Count);
@@ -72,11 +87,19 @@ public class Initializing : IState
     {
         var dt = Time.deltaTime;
         _innerTimer += dt;
+        
+        if (Input.GetKeyDown(KeyCode.Return))
+            Game.Instance.YieldState(new YieldForEvent(ResourceStorage.Instance.prologue));
     }
-
+    
     public void OnEndState()
     {
         
     }
-    
+
+    private void OnYieldEnd()
+    {
+        Game.Instance.SetState(new Stage1Play());
+        FadeContainer.Instance.FadeTo(0f, 0f);
+    }
 }

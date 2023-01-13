@@ -12,7 +12,7 @@ public class FadeContainer : MonoBehaviour
     private Color _targetColor = Color.black;
     private float _targetAlpha = 0f;
     private float _prevAlpha = 0f;
-    private float _targetDuration = 0f;
+    private float _targetDuration = -1f;
     private float _innerTimer = 0f;
 
     private void Awake()

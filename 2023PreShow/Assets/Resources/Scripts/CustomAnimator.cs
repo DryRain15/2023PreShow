@@ -14,6 +14,8 @@ public class CustomAnimator : MonoBehaviour
 
     public string animName;
     public CustomAnimationSet animSet;
+    
+    public string nextAnimName;
 
     public int frameIndex = 0;
     public float animSpeed = 1f;
@@ -49,6 +51,12 @@ public class CustomAnimator : MonoBehaviour
             {
                 if (isLoop)
                     frameIndex *= clip.Size * -1;
+                else if (nextAnimName is not null)
+                {
+                    SetAnim(nextAnimName, true);
+                    nextAnimName = null;
+                }
+                
                 frameIndex = frameIndex.Clamp(clip.Size - 1);
             }
             sr.sprite = currentFrame.sprite;
@@ -78,6 +86,15 @@ public class CustomAnimator : MonoBehaviour
         clip = animSet.animMap[key];
         frameIndex = 0;
         sr.sprite = clip.GetFrame(frameIndex).sprite;
+    }
+
+    public void SetNextAnim(string key)
+    {
+        isLoop = false;
+        if (key == animName)
+            return;
+        if (!animSet.animMap.ContainsKey(key)) return;
+        nextAnimName = key;
     }
 
     public void SetSpriteAlpha(float value)

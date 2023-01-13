@@ -41,6 +41,7 @@ public class DialogueEventData
 	// SpeechEvent
 	public string Text;
 	public string Speaker;
+	public float TimeMult = 1f;
 	
 	// ImageEvent
 	public Sprite Image;

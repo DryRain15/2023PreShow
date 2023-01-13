@@ -9,6 +9,9 @@ public class ResourceStorage : MonoBehaviour
     
     public Material lineMaterial;
 
+    public DialogueScript prologue;
+    public DialogueScript ask;
+
     private void Awake()
     {
         Instance = this;

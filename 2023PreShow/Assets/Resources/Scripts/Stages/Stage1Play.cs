@@ -38,9 +38,11 @@ public class Stage1Play : IState
 			path.Initiate();
 		}
 
-		Game.Instance.Player.Position = _currentPath.startPoint + _progress * _currentPath.direction;
-		
-		TitleContainer.Instance.SetTitle("title_stage_1");
+		var player = Game.Instance.Player;
+		player.Position = _currentPath.startPoint + _progress * _currentPath.direction;
+		CameraFollow.Instance.target = player.transform;
+
+		player.PlayIntroScene(() => { TitleContainer.Instance.SetTitle("title_stage_1"); });
 	}
 
 	public void OnState()
@@ -82,8 +84,7 @@ public class Stage1Play : IState
 				moveDist = adjDist;
 				target = adj.Key;
 			}
-			
-			if (target == _currentPath.id && adjDist.Abs() > 0f && tempP is <= 0f or >= 1f)
+			else if (target == _currentPath.id && adjDist.Abs() > 0f && tempP is <= 0f or >= 1f)
 			{
 				moveDist = adjDist;
 				target = adj.Key;

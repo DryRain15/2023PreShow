@@ -113,10 +113,10 @@ public class YieldForEvent : IState
 				if (_innerTimer < dt + Constants.Epsilon)
 					SpeechContainer.Instance.Show();
 				
-				if (data.Wait && _innerTimer <= data.Text.Length * 0.08f)
+				if (data.Wait && _innerTimer <= data.Text.Length * 0.05f * data.TimeMult)
 				{
 					string outText = rawText.Substring(0, 
-						Mathf.Min(rawText.Length, (int)(_innerTimer / 0.08f)));
+						Mathf.Min(rawText.Length, (int)(_innerTimer / (0.05f * data.TimeMult)*2)));
 					
 					outText = Encoding.Default.GetString(
 							Encoding.Default.GetBytes(outText));
@@ -124,10 +124,9 @@ public class YieldForEvent : IState
 					
 					if (GlobalInputController.Instance.ConfirmPressed)
 					{
-						_innerTimer = data.Text.Length * 0.08f;
+						_innerTimer = data.Text.Length * 0.05f * data.TimeMult;
 						SpeechContainer.Instance.SetText(rawSpeaker, rawText);
 					}
-					return;
 				}
 				else if (GlobalInputController.Instance.ConfirmPressed)
 				{
@@ -165,12 +164,27 @@ public class YieldForEvent : IState
 				else
 				{
 					if (targetImage is null)
+					{
 						ImageContainer.Instance.SetImage(null);
+						ImageContainer.Instance.SetAlpha(0f);
+					}
+					else
+					{
+						ImageContainer.Instance.SetAlpha(1f);
+					}
 					_currentLine++;
 					_innerTimer = 0f;
 				}
 				break;
 			case DialogueEventType.Shake:
+				if (!data.Wait)
+				{
+					Game.Instance.StartCoroutine(ShakeRoutine(data.Power, data.Duration));
+					_currentLine++;
+					_innerTimer = 0f;
+					return;
+				}
+				
 				if (data.Wait && _innerTimer < data.Duration)
 				{
 					ImageContainer.Instance.Rect.anchoredPosition
@@ -187,13 +201,9 @@ public class YieldForEvent : IState
 				}
 				break;
 			case DialogueEventType.Fade:
-				if (data.Wait && _innerTimer < data.Duration)
-				{
-					if (_innerTimer < dt + Constants.Epsilon)
-						FadeContainer.Instance.FadeTo(data.Destination, data.Duration, data.Color);
-					return;
-				}
-				else
+				if (_innerTimer < dt + Constants.Epsilon)
+					FadeContainer.Instance.FadeTo(data.Destination, data.Duration, data.Color);
+				if (!data.Wait || _innerTimer > data.Duration)
 				{
 					_currentLine++;
 					_innerTimer = 0f;
@@ -237,6 +247,25 @@ public class YieldForEvent : IState
 				}
 				break;
 		}
+	}
+
+	IEnumerator ShakeRoutine(float power, float duration)
+	{
+		var it = 0f;
+		while (it < duration)
+		{
+			var dt = Time.deltaTime;
+			it += dt;
+			
+			ImageContainer.Instance.Rect.anchoredPosition
+				= new Vector2(
+					Random.Range(-power, power), 
+					Random.Range(-power, power));
+
+			yield return null;
+		}
+		
+		ImageContainer.Instance.Rect.anchoredPosition = Vector2.zero;
 	}
 
 	public void OnEndState()

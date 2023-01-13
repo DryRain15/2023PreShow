@@ -74,25 +74,25 @@ public class Game : MonoBehaviour, IStateContainer
         CurrentState?.OnState();
         
         
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SetState(new Stage1Play());
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SetState(new Stage2Play());
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SetState(new Stage3Play());
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            YieldState(new YieldForEvent(TestScript));
-        }
+        // if (Input.GetKeyDown(KeyCode.Alpha1))
+        // {
+        //     SetState(new Stage1Play());
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.Alpha2))
+        // {
+        //     SetState(new Stage2Play());
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.Alpha3))
+        // {
+        //     SetState(new Stage3Play());
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     YieldState(new YieldForEvent(TestScript));
+        // }
     }
     
     public IState CurrentState { get; private set; }
@@ -181,12 +181,9 @@ public class Game : MonoBehaviour, IStateContainer
 
     private void OnDrawGizmos()
     {
-        if (CurrentState is Stage1Play s1)
+        foreach (var path in Paths)
         {
-            foreach (var path in Paths)
-            {
-                path.DrawGizmos();
-            }
+            path.DrawGizmos();
         }
     }
     

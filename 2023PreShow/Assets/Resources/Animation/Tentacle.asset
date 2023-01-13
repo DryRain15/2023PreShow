@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 484560b81601ffd4eb02f65b083b3350, type: 3}
+  m_Name: Tentacle
+  m_EditorClassIdentifier: 
+  defaultName: tentacle
+  animMap:
+    m_keys:
+    - TentacleIntro
+    - TentacleIdle
+    - TentacleGrab
+    - TentacleShoot
+    - TentacleWhip
+    - Empty
+    m_values:
+    - {fileID: 11400000, guid: fafb4426dd0bdb549bea14ab54f6b5f4, type: 2}
+    - {fileID: 11400000, guid: cacb5d322136ac140b22617d1219c4cd, type: 2}
+    - {fileID: 11400000, guid: d3a5b790f1ce42c4c89dbf0664f21457, type: 2}
+    - {fileID: 11400000, guid: 6a771998d3a9a814e91638aafb330d3e, type: 2}
+    - {fileID: 11400000, guid: 468b3e39d49366d4c90f1cae83f72531, type: 2}
+    - {fileID: 11400000, guid: 7a3e5b9418e696e408670a62e726edb1, type: 2}

@@ -23,7 +23,7 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target is null)
+        if (!target)
             return;
         
         var dt = Time.deltaTime;
