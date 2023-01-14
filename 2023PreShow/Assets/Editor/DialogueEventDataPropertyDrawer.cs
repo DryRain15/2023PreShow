@@ -21,6 +21,12 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 				return 120f;
 			case 5:
 				return 60f + property.FindPropertyRelative("Choices").arraySize * 24f;
+			case 6:
+				return 60f + property.FindPropertyRelative("Choices").arraySize * 24f;
+			case 7:
+				return 72f;
+			case 8:
+				return 72f;
 			default:
 				return 120f;
 		}
@@ -76,6 +82,22 @@ public class DialogueEventDataPropertyDrawer : PropertyDrawer
 			case 5:
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Choices"));
 				tempRect.y += m_h * property.FindPropertyRelative("Choices").arraySize;
+				break;
+			case 6:
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Choices"));
+				tempRect.y += m_h * property.FindPropertyRelative("Choices").arraySize;
+				break;
+			case 7:
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Text"));
+				tempRect.y += m_h;
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Duration"));
+				tempRect.y += m_h;
+				break;
+			case 8:
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Wait"));
+				tempRect.y += m_h;
+				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Sound"));
+				tempRect.y += m_h;
 				break;
 			default:
 				EditorGUI.PropertyField(tempRect, property.FindPropertyRelative("Wait"));

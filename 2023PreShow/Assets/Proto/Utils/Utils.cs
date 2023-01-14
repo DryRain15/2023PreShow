@@ -27,7 +27,7 @@ namespace Proto.Utils
             return _stringBuilderInner.ToString();
         }
         
-        public static Vector2 GetDirection(this InputAxis axis)
+        public static Vector2 GetDirection(this InputAxis axis, float mult = 1f)
         {
             Vector2 direction = Vector2.zero;
         
@@ -40,7 +40,7 @@ namespace Proto.Utils
             if (axis.HasFlag(InputAxis.W))
                 direction.x -= 1;
 
-            return direction.normalized;
+            return direction.normalized * mult;
         }
     }
 }

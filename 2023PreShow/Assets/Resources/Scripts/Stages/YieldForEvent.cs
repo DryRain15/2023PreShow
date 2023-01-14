@@ -22,16 +22,21 @@ public class YieldForEvent : IState
 	private float _innerTimer;
 
 	public int ChoiceCache = -1;
+	public int ChoiceStack = 0;
+
+	public Action<int> OnChoiceResult;
+	public Action OnEndEvent;
 
 	public YieldForEvent(DialogueScript dialogue)
 	{
 		RegisterDialogue(dialogue);
 	}
 
-	public YieldForEvent(DialogueScript dialogue, string param)
+	public YieldForEvent(DialogueScript dialogue, string param, Action<int> choice = null)
 	{
-		_currentParam = param;
 		RegisterDialogue(dialogue);
+		_currentParam = param;
+		OnChoiceResult = choice;
 	}
 
 	public void RegisterDialogue(DialogueScript dialogue)
@@ -85,6 +90,7 @@ public class YieldForEvent : IState
 		if (_currentLine >= CurrentDialogue.Count)
 		{
 			Game.Instance.SetState(null);
+			OnEndEvent?.Invoke();
 			return;
 		}
 		
@@ -124,7 +130,7 @@ public class YieldForEvent : IState
 				if (_innerTimer < dt + Constants.Epsilon)
 					SpeechContainer.Instance.Show();
 				
-				if (data.Wait && _innerTimer <= data.Text.Length * 0.05f * data.TimeMult)
+				if (data.Wait && _innerTimer <= (rawText.Length - 1) * 0.05f * data.TimeMult)
 				{
 					string outText = rawText.Substring(0, 
 						Mathf.Min(rawText.Length, (int)(_innerTimer / (0.05f * data.TimeMult)*2)));
@@ -133,9 +139,9 @@ public class YieldForEvent : IState
 							Encoding.Default.GetBytes(outText));
 					SpeechContainer.Instance.SetText(rawSpeaker, outText);
 					
-					if (GlobalInputController.Instance.ConfirmPressed)
+					if (GlobalInputController.Instance.ConfirmPressed || rawText.Length <= outText.Length)
 					{
-						_innerTimer = data.Text.Length * 0.05f * data.TimeMult;
+						_innerTimer = rawText.Length * 0.05f * data.TimeMult;
 						SpeechContainer.Instance.SetText(rawSpeaker, rawText);
 					}
 				}
@@ -255,6 +261,92 @@ public class YieldForEvent : IState
 				else if (GlobalInputController.Instance.CurrentFrameAxis.y < -0.5f)
 				{
 					ChoiceCache = Mathf.Min(data.Choices.Count - 1, ChoiceCache + 1);
+				}
+				
+				OnChoiceResult?.Invoke(ChoiceCache);
+				break;
+			case DialogueEventType.Gather:
+				string rawAnswers = "";
+
+				for (int idx = 0; idx < data.Choices.Count; idx++)
+				{
+					var choice = data.Choices[idx];
+					var marker = ChoiceCache == idx ? "▶" : "";
+					var rawChoice = _textData.ContainsKey(choice) ? _textData[choice]["Content"].ToString() : choice;
+					
+					rawAnswers += marker + "\t" + rawChoice
+					              + ((idx == 0) ? "\t" + new string('|', ChoiceStack + 1) 
+					                                   + new string('_', 10 - ChoiceStack) + "|\n"
+						              : "\n");
+				}
+				
+				if (_innerTimer < dt + Constants.Epsilon)
+					SpeechContainer.Instance.Show();
+				
+				SpeechContainer.Instance.SetText(data.Speaker.Replace("%s", _currentParam), rawAnswers);
+
+				if (_innerTimer < dt + Constants.Epsilon)
+				{
+					ChoiceCache = 0;
+					return;
+				}
+
+				if (GlobalInputController.Instance.ConfirmPressed)
+				{
+					if (ChoiceCache == 0)
+					{
+						ChoiceStack++;
+					}
+					
+					if (ChoiceStack >= 10 || ChoiceCache > 0)
+					{
+						_currentLine++;
+						_innerTimer = 0f;
+						ChoiceStack = 0;
+				
+						OnChoiceResult?.Invoke(ChoiceCache);
+					}
+				}
+
+				if (GlobalInputController.Instance.CurrentFrameAxis.y > 0.5f)
+				{
+					ChoiceCache = Mathf.Max(0, ChoiceCache - 1);
+				}
+				else if (GlobalInputController.Instance.CurrentFrameAxis.y < -0.5f)
+				{
+					ChoiceCache = Mathf.Min(data.Choices.Count - 1, ChoiceCache + 1);
+				}
+				
+				break;
+			case DialogueEventType.Title:
+				if (_innerTimer < dt + Constants.Epsilon)
+				{
+					TitleContainer.Instance.SetTitle(data.Text, data.Duration, _currentParam);
+					return;
+				}
+
+				if (_innerTimer < 2f + data.Duration)
+				{
+					return;
+				}
+				else
+				{
+					_currentLine++;
+					_innerTimer = 0f;
+				}
+				break;
+			case DialogueEventType.Sound:
+				if (_innerTimer < dt + Constants.Epsilon)
+					Game.Instance.AudioSource.PlayOneShot(data.Sound);
+				
+				if (data.Wait && _innerTimer < data.Sound.length)
+				{
+					return;
+				}
+				else
+				{
+					_currentLine++;
+					_innerTimer = 0f;
 				}
 				break;
 		}

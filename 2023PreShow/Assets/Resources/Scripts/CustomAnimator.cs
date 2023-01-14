@@ -79,6 +79,7 @@ public class CustomAnimator : MonoBehaviour
     public void SetFrame(int frame)
     {
         frameIndex = frame.Clamp(clip.Size - 1);
+        sr.sprite = clip.GetFrame(frameIndex).sprite;
     }
 
     public void SetAnim(string key, bool loop = false)

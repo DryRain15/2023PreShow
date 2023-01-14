@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 		foreach (var (axis, tentacle) in Legs)
 		{
 			var dir = axis.GetDirection() * 0.3f;
-			tentacle.transform.localPosition = dir.ToVector3(0.1f);
+			tentacle.transform.localPosition = dir.ToVector3(-0.3f);
 			tentacle.transform.localRotation = Quaternion.Euler(0, 0, dir.ToAngle());
 		}
 	}
@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 
 		foreach (var legsValue in Legs.Values)
 		{
+			Game.Instance.PlayClipDelayed(ResourceStorage.Instance.GetRandomPops(), 0.7f);
 			legsValue.SetAnim("TentacleIntro");
 			yield return new WaitForSeconds(Random.value * 0.3f);
 		}
@@ -77,24 +78,31 @@ public class Player : MonoBehaviour
 	public void ShakeLeg(InputAxis axis)
 	{
 		if (!Legs.ContainsKey(axis)) return;
-		
+
+		_animator.transform.localPosition = axis.GetDirection(0.1f).ToVector3(-2f);
+		_sr.flipX = _sr.transform.localPosition.x > 0;
 		Legs[axis].SetAnim("TentacleWhip");
+		Game.Instance.PlayClip(ResourceStorage.Instance.GetRandomClip());
 	}
 
 	public void GrabLeg(InputAxis axis)
 	{
 		if (!Legs.ContainsKey(axis)) return;
 		
-		
+		_animator.transform.localPosition = axis.GetDirection(0.1f).ToVector3(-2f);
+		_sr.flipX = _sr.transform.localPosition.x > 0;
 		Legs[axis].SetAnim("TentacleGrab");
+		Game.Instance.PlayClip(ResourceStorage.Instance.GetRandomClip());
 	}
 
 	public void ShootLeg(InputAxis axis)
 	{
 		if (!Legs.ContainsKey(axis)) return;
 		
-		
+		_animator.transform.localPosition = axis.GetDirection(0.1f).ToVector3(-2f);
+		_sr.flipX = _sr.transform.localPosition.x > 0;
 		Legs[axis].SetAnim("TentacleShoot");
+		Game.Instance.PlayClip(ResourceStorage.Instance.GetRandomClip());
 	}
 
 	private void OnValidate()
@@ -102,7 +110,7 @@ public class Player : MonoBehaviour
 		foreach (var (axis, tentacle) in Legs)
 		{
 			var dir = axis.GetDirection() * 0.3f;
-			tentacle.transform.localPosition = dir.ToVector3(0.1f);
+			tentacle.transform.localPosition = dir.ToVector3(-0.3f);
 			tentacle.transform.localRotation = Quaternion.Euler(0, 0, dir.ToAngle());
 		}
 	}

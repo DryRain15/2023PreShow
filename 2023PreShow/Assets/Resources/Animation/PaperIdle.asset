@@ -12,5 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc9aa1431a309a4c833b69a618b0d78, type: 3}
   m_Name: PaperIdle
   m_EditorClassIdentifier: 
-  defaultDuration: 100
-  spriteSequence: []
+  defaultDuration: 120
+  spriteSequence:
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 100
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 120
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 120
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 120
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 120
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 120
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 120
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 120
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 120
+  - sprite: {fileID: 21300000, guid: 609a887571950a64c8e21737ed97f7c5, type: 3}
+    duration: 120

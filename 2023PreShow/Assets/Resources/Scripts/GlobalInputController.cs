@@ -35,14 +35,14 @@ public class GlobalInputController : MonoBehaviour
 
     public AxisKeyDictionary AxisKeys = new AxisKeyDictionary()
     {
-        { InputAxis.N, KeyCode.W },
-        { InputAxis.N|InputAxis.E, KeyCode.E },
-        { InputAxis.E, KeyCode.D },
-        { InputAxis.S|InputAxis.E, KeyCode.C },
-        { InputAxis.S, KeyCode.X },
-        { InputAxis.S|InputAxis.W, KeyCode.Z },
-        { InputAxis.W, KeyCode.A },
-        { InputAxis.N|InputAxis.W, KeyCode.Q }
+        { InputAxis.N, KeyCode.Keypad8 },
+        { InputAxis.N|InputAxis.E, KeyCode.Keypad9 },
+        { InputAxis.E, KeyCode.Keypad6 },
+        { InputAxis.S|InputAxis.E, KeyCode.Keypad3 },
+        { InputAxis.S, KeyCode.Keypad2 },
+        { InputAxis.S|InputAxis.W, KeyCode.Keypad1 },
+        { InputAxis.W, KeyCode.Keypad4 },
+        { InputAxis.N|InputAxis.W, KeyCode.Keypad7 }
     };
 
 
@@ -59,7 +59,7 @@ public class GlobalInputController : MonoBehaviour
         InputAxis.N|InputAxis.E,
     };
 
-    public KeyCode confirm = KeyCode.S;
+    public KeyCode confirm = KeyCode.Keypad5;
     public KeyCode cancel = KeyCode.F;
     
     public KeyCode menu = KeyCode.Escape;

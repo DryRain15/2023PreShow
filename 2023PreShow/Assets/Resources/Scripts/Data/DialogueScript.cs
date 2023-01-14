@@ -23,6 +23,9 @@ public enum DialogueEventType{
 	Shake,
 	Fade,
 	Choice,
+	Gather,
+	Title,
+	Sound,
 }
 
 [Serializable]
@@ -56,4 +59,7 @@ public class DialogueEventData
 	
 	// ChoiceEvent
 	public List<string> Choices;
+	
+	// SoundEvent
+	public AudioClip Sound;
 }

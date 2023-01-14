@@ -17,7 +17,7 @@ public class Stage1Play : IState
 
 	private Path _currentPath;
 	private static List<Path> PathPool => Game.Instance.Paths;
-	private float _progress = 0f;
+	private float _progress = 0.3f;
 
 	public float Speed = 3f;
 
@@ -33,18 +33,26 @@ public class Stage1Play : IState
 		if (IsStarted) return;
 
 		IsStarted = true;
-		_currentPath = Game.Instance.Paths[0];
+		_currentPath = PathPool[0];
 		
-		foreach (var path in Game.Instance.Paths)
+		foreach (var path in PathPool)
 		{
 			path.Initiate();
 		}
 
 		_player = Game.Instance.Player;
-		_player.Position = _currentPath.startPoint + _progress * _currentPath.direction;
+		_position = _currentPath.startPoint + _progress * _currentPath.direction;
+		_player.Position = _position;
 		CameraFollow.Instance.target = _player.transform;
+		Game.Instance.Stage1.SetActive(true);
 
-		_player.PlayIntroScene(() => { TitleContainer.Instance.SetTitle("title_stage_1"); });
+		Game.Instance.CompleteText.text = Game.CompleteSentence;
+
+		_player.PlayIntroScene(() =>
+		{
+			Game.TwitchInputMode = true;
+			TitleContainer.Instance.SetTitle("title_stage_1");
+		});
 	}
 
 	public void OnState()
@@ -123,5 +131,8 @@ public class Stage1Play : IState
 		{
 			path.Eliminate();
 		}
+		
+		Game.Instance.Stage1.SetActive(false);
+		Game.TwitchInputMode = false;
 	}
 }

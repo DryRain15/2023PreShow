@@ -30,7 +30,12 @@ public class Stage3Play : IState
 
 		IsStarted = true;
 		
+		FadeContainer.Instance.FadeTo(0f, 2f);
+		
+		Game.Instance.Stage3.SetActive(true);
 		Game.Instance.Player.Position = Vector3.zero;
+		
+		Game.Instance.CompleteText.text = Game.CompleteSentence;
 		
 		TitleContainer.Instance.SetTitle("title_stage_3");
 	}
@@ -65,7 +70,10 @@ public class Stage3Play : IState
 		// _innerTimer += 0.1f;
 
 		// _prevAxis = axis;
-		Game.Instance.Player.ShakeLeg(raw);
+		Game.Instance.Player.ShootLeg(raw);
+		
+		if (Game.Instance.Player.Position.magnitude > 48.4f)
+			_velocity = -Game.Instance.Player.Position.normalized * _velocity.magnitude;
 
 		Game.Instance.Player.Position += _velocity.ToVector3() * dt;
 		_velocity *= 1 - dt * 0.1f;
@@ -73,5 +81,7 @@ public class Stage3Play : IState
 
 	public void OnEndState()
 	{
+		Game.Instance.Stage3.SetActive(false);
+		Game.TwitchInputMode = false;
 	}
 }

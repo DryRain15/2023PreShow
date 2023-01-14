@@ -19,7 +19,26 @@ MonoBehaviour:
     Duration: 0
     TextboxOff: 0
     ImageOff: 0
-    Text: 
+    Text: default_choice_content
+    Speaker: 
+    TimeMult: 1
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+  - _type: 6
+    Wait: 0
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: default_choice_content
     Speaker: 
     TimeMult: 0
     Image: {fileID: 0}
@@ -32,4 +51,6 @@ MonoBehaviour:
     Power: 0
     Destination: 0
     Color: {r: 0, g: 0, b: 0, a: 0}
-    Choices: []
+    Choices:
+    - default_choice_accept
+    - default_choice_reject

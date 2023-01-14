@@ -18,6 +18,7 @@ public class Game : MonoBehaviour, IStateContainer
     public Player Player;
 
     public string currentStateName;
+    public string yieldStateName;
     
     public string userName;
     public string userToken;
@@ -33,7 +34,10 @@ public class Game : MonoBehaviour, IStateContainer
 
     public TMP_Text TwitchState;
 
+    public AudioSource AudioSource;
+
     private static bool _twitchInputMode;
+
     public static bool TwitchInputMode
     {
         get => _twitchInputMode;
@@ -44,10 +48,12 @@ public class Game : MonoBehaviour, IStateContainer
         }
     }
 
+
     public static string Word1 = "";
     public static string Word2 = "";
     public static string Word3 = "";
-    public static string CompleteSentence = $"{Word1}이(가) {Word2}에서 {Word3}을(를) ...하게 한다";
+    public static string CompleteSentence => $"{Word1}이(가) \n{Word2}에서 \n{Word3}을(를) ...하게 한다";
+    public TMP_Text CompleteText;
 
     private void Awake()
     {
@@ -78,32 +84,14 @@ public class Game : MonoBehaviour, IStateContainer
         if (Input.GetKeyDown(KeyCode.Tab))
             TwitchInputMode = !TwitchInputMode;
 
-        GlobalInputController.Instance.OnUpdate();
-        
         CurrentState?.OnState();
-        
-        
-        // if (Input.GetKeyDown(KeyCode.Alpha1))
-        // {
-        //     SetState(new Stage1Play());
-        // }
-        //
-        // if (Input.GetKeyDown(KeyCode.Alpha2))
-        // {
-        //     SetState(new Stage2Play());
-        // }
-        //
-        // if (Input.GetKeyDown(KeyCode.Alpha3))
-        // {
-        //     SetState(new Stage3Play());
-        // }
-        //
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     YieldState(new YieldForEvent(TestScript));
-        // }
     }
-    
+
+    private void LateUpdate()
+    {
+        GlobalInputController.Instance.OnUpdate();
+    }
+
     public IState CurrentState { get; private set; }
 
     public void SetState(IState state, bool doOverride = false)
@@ -123,6 +111,9 @@ public class Game : MonoBehaviour, IStateContainer
                 CurrentState = CurrentState.YieldState;
                 CurrentState.IsYield = false;
                 CurrentState.YieldState = state;
+                
+                if (!CurrentState.IsStarted)
+                    CurrentState.OnStartState();
             }
         }
         else
@@ -141,6 +132,16 @@ public class Game : MonoBehaviour, IStateContainer
         
         CurrentState = state;
         CurrentState?.OnStartState();
+        
+        OnChangeState();
+    }
+
+    public void ReserveState(IState state)
+    {
+        state.IsYield = true;
+        CurrentState.YieldState = state;
+        
+        OnChangeState();
     }
 
     /// <summary>
@@ -148,7 +149,25 @@ public class Game : MonoBehaviour, IStateContainer
     /// </summary>
     public void OnChangeState()
     {
-        currentStateName = CurrentState?.GetType().Name;
+        currentStateName = CurrentState?.GetType().Name ?? "";
+        yieldStateName = CurrentState?.YieldState?.GetType().Name ?? "";
+    }
+    
+    public void PlayClip(AudioClip clip)
+    {
+        AudioSource.clip = clip;
+        AudioSource.PlayOneShot(clip);
+    }
+    
+    public void PlayClipDelayed(AudioClip clip, float delay)
+    {
+        StartCoroutine(DelayedPlayRoutine(clip, delay));
+    }
+
+    private IEnumerator DelayedPlayRoutine(AudioClip clip, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        PlayClip(clip);
     }
 
     private void OnValidate()
@@ -163,7 +182,15 @@ public class Game : MonoBehaviour, IStateContainer
             var path = Paths[idx];
             path.id = idx;
             if (idx > 0)
+            {
+                // path.direction *= 0.7f;
                 path.Parent = Paths[path.parentIdx];
+            }
+            // else
+            // {
+            //     path.startPoint *= 0.7f;
+            //     path.endPoint *= 0.7f;
+            // }
             path.adjacentPaths = new AdjacentPathDictionary();
         }
 
@@ -202,7 +229,7 @@ public class Game : MonoBehaviour, IStateContainer
                     }
                 }
             }
-            
+
             path.Validate();
         }
     }

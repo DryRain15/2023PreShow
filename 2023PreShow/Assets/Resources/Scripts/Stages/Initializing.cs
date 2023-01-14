@@ -49,7 +49,7 @@ public class Initializing : IState
     
     public void OnStartState()
     {
-        TwitchChatClient.instance.Init(
+        TwitchChatClient.instance.Init(_config,
             () =>
             {
                 Debug.Log("Success");
@@ -75,7 +75,6 @@ public class Initializing : IState
                         
                     }
                     Debug.Log($"{command.Command} {command.Parameters[0] ?? "null"}");
-                    FadeContainer.Instance.FadeTo(1f, 0f);
                 });
                 
                 Debug.Log(TwitchUserManager.Users.Count);
@@ -89,7 +88,7 @@ public class Initializing : IState
         _innerTimer += dt;
         
         if (Input.GetKeyDown(KeyCode.Return))
-            Game.Instance.YieldState(new YieldForEvent(ResourceStorage.Instance.prologue));
+            Game.Instance.YieldState(new YieldForEvent(ResourceStorage.Instance.prologue, Game.CompleteSentence));
     }
     
     public void OnEndState()

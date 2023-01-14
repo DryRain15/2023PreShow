@@ -1,0 +1,776 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7f751a27008cf4b9a21ad91b25963a, type: 3}
+  m_Name: Ending
+  m_EditorClassIdentifier: 
+  fadeOnStart: 1
+  DialogueEvents:
+  - _type: 0
+    Wait: 1
+    Duration: 0.5
+    TextboxOff: 1
+    ImageOff: 1
+    Text: 
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 7
+    Wait: 1
+    Duration: 8
+    TextboxOff: 1
+    ImageOff: 1
+    Text: <size=50%>%s</size>
+    Speaker: 
+    TimeMult: 3
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.2
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 4
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 0
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: a162f3b48131dd04da5e7c41f0175bd8, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 546.6
+      height: 640.7765
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 3
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 8
+    Wait: 0
+    Duration: 1
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 8300000, guid: 2ce4fe62b31b1d94eb74b29cac3285ec, type: 3}
+  - _type: 2
+    Wait: 0
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 951a8b158b5485445ab3fba3f927a6df, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.1
+    TextboxOff: 1
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 951a8b158b5485445ab3fba3f927a6df, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 0
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: f7af9d66073e60c45874badf9216c5c3, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.1
+    TextboxOff: 1
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 78dd8598eba90484d9671bc032ffee3c, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 0
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 78dd8598eba90484d9671bc032ffee3c, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.1
+    TextboxOff: 1
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 78dd8598eba90484d9671bc032ffee3c, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 0
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 0fd80f56d1c7b104fbcffbc1f4a69965, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.1
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 0fd80f56d1c7b104fbcffbc1f4a69965, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 7516dd996dd09314c9fb182c7022165d, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.1
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 5165d3647c1c48d47836665420069421, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 19d97e213fe505245b5e247af9f0fb41, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.1
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 5165d3647c1c48d47836665420069421, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 5165d3647c1c48d47836665420069421, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.1
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 94251da283ea52349b1bc1cee669decd, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.5
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: eaaa3823c7d453c4888971c61d7edca8, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.05
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 23080862fec58ef4fbda10a94227b233, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 7679e9aea70d4874c9239737c31ebeed, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.05
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 4dff2e4f8a907054ca8c265faeaa2baa, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.05
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 23080862fec58ef4fbda10a94227b233, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.05
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 26358291094eff34fb7c8821748b99b4, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 0.05
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: fb255517206e8c645aa21c9ae3446eed, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 2
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 23080862fec58ef4fbda10a94227b233, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 4
+    Wait: 0
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 21300000, guid: 23080862fec58ef4fbda10a94227b233, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 1
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 2
+    Wait: 1
+    Duration: 0
+    TextboxOff: 0
+    ImageOff: 0
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 2
+    TextboxOff: 1
+    ImageOff: 1
+    Text: '%s'
+    Speaker: 
+    TimeMult: 0
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}

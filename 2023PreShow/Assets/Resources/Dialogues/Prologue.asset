@@ -36,6 +36,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 2
     Wait: 1
     Duration: 0
@@ -58,25 +59,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
-  - _type: 0
-    Wait: 1
-    Duration: 0.3
-    TextboxOff: 0
-    ImageOff: 0
-    Text: prologue_speech_0_1
-    Speaker: 
-    TimeMult: 1
-    Image: {fileID: 0}
-    ImageRect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    Power: 0
-    Destination: 0
-    Color: {r: 0, g: 0, b: 0, a: 0}
-    Choices: []
+    Sound: {fileID: 0}
   - _type: 4
     Wait: 1
     Duration: 2
@@ -96,6 +79,27 @@ MonoBehaviour:
     Destination: 0
     Color: {r: 0, g: 0, b: 0, a: 0}
     Choices: []
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 1
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_0_1
+    Speaker: 
+    TimeMult: 1
+    Image: {fileID: 0}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices: []
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 0
@@ -115,6 +119,29 @@ MonoBehaviour:
     Destination: 0
     Color: {r: 0, g: 0, b: 0, a: 0}
     Choices: []
+    Sound: {fileID: 0}
+  - _type: 8
+    Wait: 0
+    Duration: 3
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+    Sound: {fileID: 8300000, guid: b17225189be983b458ffdfd73bf24fb6, type: 3}
   - _type: 2
     Wait: 1
     Duration: 0
@@ -137,6 +164,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 0
@@ -156,6 +184,7 @@ MonoBehaviour:
     Destination: 0
     Color: {r: 0, g: 0, b: 0, a: 0}
     Choices: []
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 0
@@ -178,6 +207,29 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
+  - _type: 8
+    Wait: 0
+    Duration: 3
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+    Sound: {fileID: 8300000, guid: 1802170f03fc8b847a9802efba33c4a0, type: 3}
   - _type: 2
     Wait: 1
     Duration: 0
@@ -200,6 +252,51 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
+  - _type: 0
+    Wait: 1
+    Duration: 1.5
+    TextboxOff: 1
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+    Sound: {fileID: 0}
+  - _type: 3
+    Wait: 1
+    Duration: 0.3
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 15
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 0
@@ -222,6 +319,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 0
@@ -244,6 +342,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 4
     Wait: 1
     Duration: 0
@@ -266,6 +365,29 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
+  - _type: 8
+    Wait: 1
+    Duration: 3
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+    Sound: {fileID: 8300000, guid: 46d0e572fac06e540b2922bdc645ac22, type: 3}
   - _type: 2
     Wait: 1
     Duration: 1
@@ -287,6 +409,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 0
     Wait: 1
     Duration: 1
@@ -309,6 +432,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 2
     Wait: 1
     Duration: 0
@@ -331,6 +455,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 4
     Wait: 1
     Duration: 1
@@ -353,6 +478,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -375,6 +501,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -397,6 +524,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -419,6 +547,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -441,6 +570,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -463,6 +593,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -485,6 +616,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 5
     Wait: 1
     Duration: 1
@@ -506,6 +638,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_0_1
     - prologue_choice_0_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -528,6 +661,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -550,6 +684,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 5
     Wait: 1
     Duration: 1
@@ -571,6 +706,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_1_1
     - prologue_choice_1_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -593,6 +729,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 5
     Wait: 1
     Duration: 1
@@ -614,6 +751,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_2_1
     - prologue_choice_2_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -636,6 +774,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -658,6 +797,7 @@ MonoBehaviour:
     - "10\uC5B5\uBC1B\uAE30"
     - "\uACE0\uC790\uB418\uAE30"
     - "\uB3C4\uB9DD\uAC04\uB2E4"
+    Sound: {fileID: 0}
   - _type: 5
     Wait: 1
     Duration: 1
@@ -679,6 +819,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -700,6 +841,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 2
     Wait: 1
     Duration: 0
@@ -721,6 +863,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -742,6 +885,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 3
     Wait: 0
     Duration: 0.7
@@ -763,6 +907,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -784,6 +929,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -805,6 +951,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -826,6 +973,29 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
+  - _type: 8
+    Wait: 0
+    Duration: 3
+    TextboxOff: 0
+    ImageOff: 0
+    Text: prologue_speech_1_21
+    Speaker: 
+    TimeMult: 0.1
+    Image: {fileID: 21300000, guid: 079916641d4a09f44a31e3d96faaf51e, type: 3}
+    ImageRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    Power: 0
+    Destination: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Choices:
+    - prologue_choice_3_1
+    - prologue_choice_3_2
+    Sound: {fileID: 8300000, guid: 0d2be446902be0548828042d25c0b536, type: 3}
   - _type: 3
     Wait: 0
     Duration: 2
@@ -847,6 +1017,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -868,6 +1039,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -889,6 +1061,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -910,6 +1083,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 4
     Wait: 0
     Duration: 5
@@ -931,6 +1105,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 3
     Wait: 0
     Duration: 5
@@ -952,6 +1127,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 1
     Wait: 1
     Duration: 1
@@ -973,6 +1149,7 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}
   - _type: 0
     Wait: 1
     Duration: 3
@@ -994,3 +1171,4 @@ MonoBehaviour:
     Choices:
     - prologue_choice_3_1
     - prologue_choice_3_2
+    Sound: {fileID: 0}

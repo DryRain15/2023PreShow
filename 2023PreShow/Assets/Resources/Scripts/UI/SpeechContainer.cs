@@ -35,6 +35,7 @@ public class SpeechContainer : MonoBehaviour
 
     public void SetText(string speaker, string speech)
     {
+        Show();
         this.mSpeaker.text = speaker;
         this.mSpeech.text = speech;
         mSpeaker.color = Color.white;
@@ -55,6 +56,8 @@ public class SpeechContainer : MonoBehaviour
     public void Show()
     {
         speechContainer.SetActive(true);
+        mSpeaker.gameObject.SetActive(true);
+        mSpeech.gameObject.SetActive(true);
     }
     
     // TODO: Transition needed

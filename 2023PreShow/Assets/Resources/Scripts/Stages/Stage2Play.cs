@@ -28,9 +28,15 @@ public class Stage2Play : IState
 
 		IsStarted = true;
 		
-		Game.Instance.Player.Position = Vector3.zero;
+		FadeContainer.Instance.FadeTo(0f, 2f);
 		
+		Game.Instance.Player.Position = Vector3.zero;
+		Game.Instance.Stage2.SetActive(true);
+		
+		Game.Instance.CompleteText.text = Game.CompleteSentence;
+
 		TitleContainer.Instance.SetTitle("title_stage_2");
+		Game.TwitchInputMode = true;
 	}
 
 	public void OnState()
@@ -56,11 +62,16 @@ public class Stage2Play : IState
 			Game.Instance.Player.ShakeLeg(raw);
 		}
 
+		if (Game.Instance.Player.Position.magnitude > 40f)
+			_velocity = -Game.Instance.Player.Position.normalized * _velocity.magnitude;
+		
 		Game.Instance.Player.Position += _velocity.ToVector3() * dt;
 		_velocity *= 1 - dt * 5f;
 	}
 
 	public void OnEndState()
 	{
+		Game.Instance.Stage2.SetActive(false);
+		Game.TwitchInputMode = false;
 	}
 }

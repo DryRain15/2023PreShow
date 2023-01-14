@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class TitleContainer : MonoBehaviour
 {
     public static TitleContainer Instance;
+    private Dictionary<string, Dictionary<string, string>> _textData;
 
     [SerializeField] private TMP_Text text;
 
@@ -21,13 +22,13 @@ public class TitleContainer : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        text = GetComponentInChildren<TMP_Text>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         Hide();
+        _textData = CSVReader.Read("DialogueKr");
     }
 
     // Update is called once per frame
@@ -38,7 +39,6 @@ public class TitleContainer : MonoBehaviour
         if (_targetDuration >= 0f)
         {
             _innerTimer += dt;
-            _innerTimer = Mathf.Clamp(_innerTimer, 0f, _introTime + _targetDuration + _outroTime);
 
             if (_innerTimer < _introTime)
             {
@@ -50,7 +50,7 @@ public class TitleContainer : MonoBehaviour
             }
             else if (_innerTimer < _introTime + _targetDuration + _outroTime)
             {
-                SetAlpha((_innerTimer - (_targetDuration + _introTime)) / _outroTime);
+                SetAlpha(1f - (_innerTimer - (_targetDuration + _introTime)) / _outroTime);
             }
             else
             {
@@ -65,14 +65,21 @@ public class TitleContainer : MonoBehaviour
         }
     }
     
-    public void SetTitle(string txt, float intro = 0.7f, float outro = 1.0f, float duration = 3f)
+    public void SetTitle(string txt, float intro, float outro, float duration = 3f, string param = "")
     {
         Show();
-        text.text = txt;
+        text.text = (_textData.ContainsKey(txt)
+            ? _textData[txt]["Content"]
+            : txt).Replace("%s", param);
         _introTime = intro;
         _outroTime = outro;
         _targetDuration = duration;
         _innerTimer = 0f;
+    }
+    
+    public void SetTitle(string txt, float duration = 3f, string param = "")
+    {
+        SetTitle(txt, 0.7f, 1.0f, duration, param);
     }
     
     public void Show()

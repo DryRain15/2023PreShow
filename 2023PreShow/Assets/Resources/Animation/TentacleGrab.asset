@@ -15,14 +15,14 @@ MonoBehaviour:
   defaultDuration: 126
   spriteSequence:
   - sprite: {fileID: -1912685775, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
-    duration: 100
+    duration: 30
   - sprite: {fileID: -501199334, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
-    duration: 100
+    duration: 30
   - sprite: {fileID: 2053710792, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
-    duration: 100
+    duration: 30
   - sprite: {fileID: -729953874, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
-    duration: 100
+    duration: 30
   - sprite: {fileID: 826636501, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
-    duration: 100
+    duration: 30
   - sprite: {fileID: 560033637, guid: cb85abf0773ea55488a624b7497abe3d, type: 3}
-    duration: 100
+    duration: 30
