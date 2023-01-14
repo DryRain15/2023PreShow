@@ -15,6 +15,7 @@ public class YieldForEvent : IState
 	public bool IsStarted { get; set; } = false;
 
 	public DialogueScript CurrentDialogue;
+	private string _currentParam;
 	private Dictionary<string, Dictionary<string, string>> _textData;
 
 	private int _currentLine = 0;
@@ -24,6 +25,12 @@ public class YieldForEvent : IState
 
 	public YieldForEvent(DialogueScript dialogue)
 	{
+		RegisterDialogue(dialogue);
+	}
+
+	public YieldForEvent(DialogueScript dialogue, string param)
+	{
+		_currentParam = param;
 		RegisterDialogue(dialogue);
 	}
 
@@ -105,6 +112,10 @@ public class YieldForEvent : IState
 			case DialogueEventType.Speech:
 				string rawText = _textData.ContainsKey(data.Text) 
 						? _textData[data.Text]["Content"] : data.Text;
+
+				if (_currentParam != null)
+					rawText = rawText.Replace("%s", _currentParam);
+				
 				string rawSpeaker = (data.Speaker.Length == 0) ?
 				                    (_textData.ContainsKey(data.Text) 
 					                    ? _textData[data.Text]["Speaker"]

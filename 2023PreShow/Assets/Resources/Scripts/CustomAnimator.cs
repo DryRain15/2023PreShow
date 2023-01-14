@@ -76,6 +76,11 @@ public class CustomAnimator : MonoBehaviour
         }
     }
 
+    public void SetFrame(int frame)
+    {
+        frameIndex = frame.Clamp(clip.Size - 1);
+    }
+
     public void SetAnim(string key, bool loop = false)
     {
         isLoop = loop;

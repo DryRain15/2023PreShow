@@ -60,6 +60,8 @@ public class CustomAnimationEditor : Editor
         {
             var anim = (CustomAnimation) target;
 
+            if (anim.spriteSequence is null || anim.spriteSequence.Count == 0)
+                return 0;
             return anim.spriteSequence.Sum(seq => seq.duration);
         }
     }

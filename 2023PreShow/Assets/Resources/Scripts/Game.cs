@@ -27,6 +27,10 @@ public class Game : MonoBehaviour, IStateContainer
     
     public List<Path> Paths = new List<Path>();
 
+    public GameObject Stage1;
+    public GameObject Stage2;
+    public GameObject Stage3;
+
     public TMP_Text TwitchState;
 
     private static bool _twitchInputMode;
@@ -39,6 +43,11 @@ public class Game : MonoBehaviour, IStateContainer
             Instance.TwitchState.text = value ? "트위치 입력 활성화" : "";
         }
     }
+
+    public static string Word1 = "";
+    public static string Word2 = "";
+    public static string Word3 = "";
+    public static string CompleteSentence = $"{Word1}이(가) {Word2}에서 {Word3}을(를) ...하게 한다";
 
     private void Awake()
     {

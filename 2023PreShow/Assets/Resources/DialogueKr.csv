@@ -34,5 +34,6 @@ prologue_speech_1_21;당신;으어으엉으어으엉으어으엉으어
 title_stage_1;;존재의 그물
 title_stage_2;;공간의 뻘
 title_stage_3;;행위의 우주
-default_choice_accept;키워드 선택;선택한다
-default_choice_reject;키워드 선택;거부한다
+default_choice_content;키워드 선택;[%s] 이 키워드로 결정하시겠습니까?
+default_choice_accept;%s;선택한다
+default_choice_reject;%s;거부한다

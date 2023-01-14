@@ -17,11 +17,14 @@ public class ItemBox : MonoBehaviour
 
     [SerializeField] private bool isContacted;
     [SerializeField] private int level;
+
+    private readonly Color HiddenColor = new Color(0.5f, 0.5f, 0.5f, 1f);
     
     void Start()
     {
         anim = GetComponent<CustomAnimator>();
         collider = GetComponent<BoxCollider2D>();
+        spriteRenderer.color = Color.cyan;
     }
 
     private void LateUpdate()
@@ -50,30 +53,37 @@ public class ItemBox : MonoBehaviour
 
     void OnHover()
     {
-        if (isRevealed) return;
-
         // TODO: test code
-        spriteRenderer.color = Color.red;
+        spriteRenderer.color = Color.white;
     }
     
     void OnLeave()
     {
-        if (isRevealed) return;
-
         // TODO: test code
-        spriteRenderer.color = Color.cyan;
+        spriteRenderer.color = HiddenColor;
     }
 
     void OnInteract()
     {
-        if (isRevealed) return;
+        if (isRevealed)
+        {
+            Game.Instance.YieldState(new YieldForEvent(ResourceStorage.Instance.ask, keyword));
+            return;
+        }
         
         level++;
+        anim.SetFrame(level);
 
         if (level > 9)
         {
             isRevealed = true;
-            spriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+            OnReveal();
         }
+    }
+
+    void OnReveal()
+    {
+        spriteRenderer.transform.localPosition = new Vector3(0f, 0f, 1f);
+        level = 0;
     }
 }
